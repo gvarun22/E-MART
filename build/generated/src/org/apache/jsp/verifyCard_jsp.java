@@ -52,7 +52,7 @@ public final class verifyCard_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    </head>\n");
       out.write("    <body>\n");
       out.write("           <form action=\"cardVerify\">\n");
-      out.write("      <label for=\"name\">Please enter your name</label><br/>\n");
+      out.write("      <label for=\"name\">Please enter your Card Number</label><br/>\n");
       out.write("      <input type=\"text\" name=\"cardNum\"/>\n");
       out.write("      <input type=\"submit\" value=\"Validate\"/>\n");
       out.write("   </form>\n");

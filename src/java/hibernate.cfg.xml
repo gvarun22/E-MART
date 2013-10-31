@@ -3,9 +3,32 @@
 <hibernate-configuration>
   <session-factory>
     <property name="hibernate.dialect">org.hibernate.dialect.DerbyDialect</property>
-    <property name="hibernate.connection.driver_class">org.apache.derby.jdbc.ClientDriver</property>
-    <property name="hibernate.connection.url">jdbc:derby://localhost:1527/BrandDB</property>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/e-mart</property>
     <property name="hibernate.connection.username">root</property>
     <property name="hibernate.connection.password">root</property>
+    <mapping resource="com/pojos/ApparelKid.hbm.xml"/>
+    <mapping resource="com/pojos/MusicRegional.hbm.xml"/>
+    <mapping resource="com/pojos/PharmacyPhysicalfitness.hbm.xml"/>
+    <mapping resource="com/pojos/FoodOrganic.hbm.xml"/>
+    <mapping resource="com/pojos/BookHistory.hbm.xml"/>
+    <mapping resource="com/pojos/FoodBakery.hbm.xml"/>
+    <mapping resource="com/pojos/PharmacyFirstaid.hbm.xml"/>
+    <mapping resource="com/pojos/ApparelMen.hbm.xml"/>
+    <mapping resource="com/pojos/ElectronicsIpods.hbm.xml"/>
+    <mapping resource="com/pojos/ElectronicLaptops.hbm.xml"/>
+    <mapping resource="com/pojos/BookTechnical.hbm.xml"/>
+    <mapping resource="com/pojos/MusicPop.hbm.xml"/>
+    <mapping resource="com/pojos/FoodFruits.hbm.xml"/>
+    <mapping resource="com/pojos/BookFictional.hbm.xml"/>
+    <mapping resource="com/pojos/ElectronicsAccessory.hbm.xml"/>
+    <mapping resource="com/pojos/FoodVegetables.hbm.xml"/>
+    <mapping resource="com/pojos/ApparelWomen.hbm.xml"/>
+    <mapping resource="com/pojos/PharmacyMedicine.hbm.xml"/>
+    <mapping resource="com/pojos/MoviesAction.hbm.xml"/>
+    <mapping resource="com/pojos/MoviesComedy.hbm.xml"/>
+    <mapping resource="com/pojos/MusicFusion.hbm.xml"/>
+    <mapping resource="com/pojos/ElectronicsMobiles.hbm.xml"/>
+    <mapping resource="com/pojos/MoviesRomantic.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>
