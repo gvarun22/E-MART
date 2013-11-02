@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 1, 2013 7:16:30 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="com.pojos.Productcustomattr" table="productcustomattr" catalog="`E-MART-1`">
+        <id name="pcaId" type="java.lang.Integer">
+            <column name="pca_id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="product" class="com.pojos.Product" fetch="select">
+            <column name="product_id" />
+        </many-to-one>
+        <property name="manufacturer" type="string">
+            <column name="manufacturer" length="45" />
+        </property>
+        <property name="arrivalDate" type="date">
+            <column name="arrival_date" length="10" />
+        </property>
+        <property name="productImage" type="binary">
+            <column name="product_image" />
+        </property>
+    </class>
+</hibernate-mapping>

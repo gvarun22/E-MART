@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 1, 2013 7:16:30 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="com.pojos.Billingaddress" table="billingaddress" catalog="`E-MART-1`">
+        <id name="baId" type="java.lang.Integer">
+            <column name="ba_id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="customer" class="com.pojos.Customer" fetch="select">
+            <column name="customer_id" />
+        </many-to-one>
+        <property name="addr1" type="string">
+            <column name="addr1" length="80" />
+        </property>
+        <property name="addr2" type="string">
+            <column name="addr2" length="80" />
+        </property>
+        <property name="city" type="string">
+            <column name="city" length="80" />
+        </property>
+        <property name="state" type="string">
+            <column name="state" length="45" />
+        </property>
+        <property name="zip" type="string">
+            <column name="zip" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>

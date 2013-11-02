@@ -15,11 +15,8 @@
         <url-pattern>/*</url-pattern>
     </filter-mapping>
 
-    <resource-ref>
-        <description>jdbc:derby://localhost:1527/E-MART</description>
-        <res-ref-name>emart</res-ref-name>
-        <res-type>javax.sql.DataSource</res-type>
-        <res-auth>Container</res-auth>
-        <res-sharing-scope>Shareable</res-sharing-scope>
-    </resource-ref>
+   <session-config>
+        <session-timeout>30</session-timeout>
+    </session-config>
+
 </web-app>

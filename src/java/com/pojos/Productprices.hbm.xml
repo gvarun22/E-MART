@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 1, 2013 7:16:30 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="com.pojos.Productprices" table="productprices" catalog="`E-MART-1`">
+        <id name="ppId" type="java.lang.Integer">
+            <column name="pp_id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="product" class="com.pojos.Product" fetch="select">
+            <column name="product_id" />
+        </many-to-one>
+        <property name="producPrice" type="java.lang.Float">
+            <column name="produc_price" precision="12" scale="0" />
+        </property>
+        <property name="specialPrice" type="java.lang.Float">
+            <column name="special_price" precision="12" scale="0" />
+        </property>
+        <property name="productCost" type="java.lang.Float">
+            <column name="product_cost" precision="12" scale="0" />
+        </property>
+    </class>
+</hibernate-mapping>

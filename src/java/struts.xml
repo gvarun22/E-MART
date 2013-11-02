@@ -3,22 +3,23 @@
    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
    "http://struts.apache.org/dtds/struts-2.0.dtd">
 <struts>
-<constant name="struts.devMode" value="true" />
-   <package name="helloworld" extends="struts-default">
+    <constant name="struts.devMode" value="true" />
+    <package name="helloworld" extends="struts-default">
      
-      <action name="hello" 
-            class="com.example.struts.HelloWorldAction" 
-            method="execute">
-            <result name="success">/HelloWorld.jsp</result>
-      </action>
-   </package>
+        <action name="Search" 
+              class="com.emart.SearchItemAction" 
+              method="execute">
+            <result name="success">/CategorySearchResults.jsp</result>
+            <result name="error">/Failure.jsp</result>
+        </action>
+    </package>
     <package name="validateVard" extends="struts-default">
      
-      <action name="cardVerify" 
-            class="com.emart.CreditCardVerifyAction" 
-            method="execute">
+        <action name="cardVerify" 
+              class="com.emart.CreditCardVerifyAction" 
+              method="execute">
             <result name="success">/Success.jsp</result>
             <result name="error">/Failure.jsp</result>
-      </action>
-   </package>
+        </action>
+    </package>
 </struts>

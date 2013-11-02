@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 1, 2013 7:16:30 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="com.pojos.Customercontact" table="customercontact" catalog="`E-MART-1`">
+        <id name="cconId" type="java.lang.Integer">
+            <column name="ccon_id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="customer" class="com.pojos.Customer" fetch="select">
+            <column name="customer_id" />
+        </many-to-one>
+        <property name="customerEmail" type="string">
+            <column name="customer_email" length="85" />
+        </property>
+        <property name="customerPhoneDay" type="string">
+            <column name="customer_phone_day" length="45" />
+        </property>
+        <property name="customerPhoneNight" type="string">
+            <column name="customer_phone_night" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>
