@@ -13,9 +13,11 @@
     </head>
     <body>
            <form action="cardVerify">
-      <label for="name">Please enter your Card Number</label><br/>
-      <input type="text" name="cardNum"/>
-      <input type="submit" value="Validate"/>
-   </form>
+               <h3><label for="name">Total amount for the shopping is: </label>
+               <label id="totalamount">${totalAmount}</label></h3><br/>
+                 <label for="name">Please enter your Card Number</label><br/>
+                 <input type="text" name="cardNum"/>
+                 <input type="submit" value="Validate"/>
+           </form>
     </body>
 </html>

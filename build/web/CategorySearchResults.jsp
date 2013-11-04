@@ -5,19 +5,22 @@
         <title>Results</title>
     </head>
     <body>
+        <form >
         <div>
             <table style="border-style: solid">
-                
             <s:iterator value="newList">
                 <tr>
                     <td>
-                <a href="http://google.com/#q=${productName}" style="">${productName}</a>
+                        <s:url action="callSelectItemActionClass" var="urlTag" >
+                            <s:param name="productId">${productId}</s:param> 
+                          </s:url>                       
+                        <a href="<s:property value="#urlTag"/>"  style="">${productName}</a>                      
                    </td>
                 </tr>
-               <!-- <a href="https://www.google.com/#q="><s:property value="pname" /></a>-->
             </s:iterator>
                  
             </table>
         </div>
+        </form>
     </body> 
 </html>

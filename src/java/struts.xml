@@ -22,4 +22,21 @@
             <result name="error">/Failure.jsp</result>
         </action>
     </package>
+    <package name="selectitem" extends="struts-default">
+        <action name="callSelectItemActionClass" 
+              class="com.emart.SelectItemAction" 
+              method="execute">
+            <result name="success">/Item.jsp</result>
+            <result name="error">/Failure.jsp</result>
+        </action>
+    </package>
+    
+    <package name="itempurchase" extends="struts-default">
+        <action name="purchase" 
+              class="com.emart.PurchaseActionClass" 
+              method="execute">
+            <result name="success">/verifyCard.jsp</result>
+            <result name="error">/Failure.jsp</result>
+        </action>
+    </package>
 </struts>

@@ -7,5 +7,11 @@
             <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/src/java/com/pojos/SearchUtility.java</file>
             <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/src/java/hibernate.cfg.xml</file>
         </group>
+        <group>
+            <file>file:/C:/Users/Kunal/Documents/NetBeansProjects/E-MART/web/CategorySearch.jsp</file>
+            <file>file:/C:/Users/Kunal/Documents/NetBeansProjects/E-MART/src/java/com/emart/SelectItemAction.java</file>
+            <file>file:/C:/Users/Kunal/Documents/NetBeansProjects/E-MART/src/java/struts.xml</file>
+            <file>file:/C:/Users/Kunal/Documents/NetBeansProjects/E-MART/src/java/com/pojos/ItemUtility.java</file>
+        </group>
     </open-files>
 </project-private>
