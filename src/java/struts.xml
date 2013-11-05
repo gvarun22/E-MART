@@ -7,8 +7,8 @@
     <package name="helloworld" extends="struts-default">
      
         <action name="Search" 
-              class="com.emart.SearchItemAction" 
-              method="execute">
+                class="com.emart.SearchItemAction" 
+                method="execute">
             <result name="success">/CategorySearchResults.jsp</result>
             <result name="error">/Failure.jsp</result>
         </action>
@@ -16,16 +16,16 @@
     <package name="validateVard" extends="struts-default">
      
         <action name="cardVerify" 
-              class="com.emart.CreditCardVerifyAction" 
-              method="execute">
+                class="com.emart.CreditCardVerifyAction" 
+                method="execute">
             <result name="success">/Success.jsp</result>
             <result name="error">/Failure.jsp</result>
         </action>
     </package>
     <package name="selectitem" extends="struts-default">
         <action name="callSelectItemActionClass" 
-              class="com.emart.SelectItemAction" 
-              method="execute">
+                class="com.emart.SelectItemAction" 
+                method="execute">
             <result name="success">/Item.jsp</result>
             <result name="error">/Failure.jsp</result>
         </action>
@@ -33,10 +33,17 @@
     
     <package name="itempurchase" extends="struts-default">
         <action name="purchase" 
-              class="com.emart.PurchaseActionClass" 
-              method="execute">
+                class="com.emart.PurchaseActionClass" 
+                method="execute">
             <result name="success">/verifyCard.jsp</result>
             <result name="error">/Failure.jsp</result>
+        </action>
+    </package>
+    <package name="login" extends="struts-default">
+        <action name="login" class="com.emart.LoginAction"
+        method="execute">
+            <result name="success">CategorySearch.jsp</result>
+            <result name="input">login.jsp</result>
         </action>
     </package>
 </struts>
