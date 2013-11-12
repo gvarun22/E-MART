@@ -1,5 +1,5 @@
 package com.pojos;
-// Generated Nov 1, 2013 7:16:30 PM by Hibernate Tools 3.6.0
+// Generated Nov 9, 2013 6:18:21 PM by Hibernate Tools 3.6.0
 
 
 import java.util.Date;
@@ -14,12 +14,12 @@ public class Productcustomattr  implements java.io.Serializable {
      private Product product;
      private String manufacturer;
      private Date arrivalDate;
-     private byte[] productImage;
+     private String productImage;
 
     public Productcustomattr() {
     }
 
-    public Productcustomattr(Product product, String manufacturer, Date arrivalDate, byte[] productImage) {
+    public Productcustomattr(Product product, String manufacturer, Date arrivalDate, String productImage) {
        this.product = product;
        this.manufacturer = manufacturer;
        this.arrivalDate = arrivalDate;
@@ -54,11 +54,11 @@ public class Productcustomattr  implements java.io.Serializable {
     public void setArrivalDate(Date arrivalDate) {
         this.arrivalDate = arrivalDate;
     }
-    public byte[] getProductImage() {
+    public String getProductImage() {
         return this.productImage;
     }
     
-    public void setProductImage(byte[] productImage) {
+    public void setProductImage(String productImage) {
         this.productImage = productImage;
     }
 

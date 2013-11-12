@@ -26,14 +26,14 @@ public class SelectItemAction {
         this.fos = fos;
     }
     float cost;
-    byte[] image;
+    String image;
     FileOutputStream fos;
 
-    public byte[] getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(byte[] image) {
+    public void setImage(String image) {
         this.image = image;
     }
 

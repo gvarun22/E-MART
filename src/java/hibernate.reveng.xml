@@ -2,25 +2,25 @@
 <!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
 <hibernate-reverse-engineering>
   <schema-selection match-catalog="e-mart-1"/>
-  <table-filter match-name="customercontact"/>
-  <table-filter match-name="orderstatus"/>
-  <table-filter match-name="productdim"/>
-  <table-filter match-name="productprices"/>
-  <table-filter match-name="useradmin"/>
-  <table-filter match-name="orderinvoice"/>
-  <table-filter match-name="customercredentials"/>
-  <table-filter match-name="customer"/>
-  <table-filter match-name="productinventory"/>
   <table-filter match-name="orderdetails"/>
-  <table-filter match-name="storeorders"/>
+  <table-filter match-name="orderitems"/>
   <table-filter match-name="productshippingprops"/>
-  <table-filter match-name="productcustomattr"/>
-  <table-filter match-name="shippingaddress"/>
-  <table-filter match-name="product"/>
+  <table-filter match-name="productprices"/>
   <table-filter match-name="store_categories"/>
-  <table-filter match-name="admincredentials"/>
   <table-filter match-name="billingaddress"/>
   <table-filter match-name="orderamounts"/>
+  <table-filter match-name="customercontact"/>
+  <table-filter match-name="storeorders"/>
+  <table-filter match-name="orderinvoice"/>
+  <table-filter match-name="orderstatus"/>
+  <table-filter match-name="productdim"/>
+  <table-filter match-name="product"/>
+  <table-filter match-name="productinventory"/>
+  <table-filter match-name="customer"/>
   <table-filter match-name="productdetail"/>
-  <table-filter match-name="orderitems"/>
+  <table-filter match-name="shippingaddress"/>
+  <table-filter match-name="productcustomattr"/>
+  <table-filter match-name="admincredentials"/>
+  <table-filter match-name="useradmin"/>
+  <table-filter match-name="customercredentials"/>
 </hibernate-reverse-engineering>

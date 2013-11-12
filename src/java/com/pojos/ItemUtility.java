@@ -55,12 +55,12 @@ public class ItemUtility {
         tx.commit();
         return descr;
     }
-    public byte[] getProductImage(int productId){
-        byte[] image;
+    public String getProductImage(int productId){
+        String image;
         Session s = sessionFactory.openSession();
         Transaction tx = s.beginTransaction();
         String query = "select pra.productImage from Productcustomattr pra where pra.product like '%" + productId+"%'";
-        image =  (byte[])s.createQuery(query).uniqueResult();
+        image =  (String) s.createQuery(query).uniqueResult();
         tx.commit();
         return image;
     }

@@ -13,11 +13,12 @@
 <html>
   
     <body>
-        <form action="purchase">
+        <s:actionerror/>
+        <form action="purchase" method="post">
         <div style="width: 400px;float:left;">
             <table>
                 <tr>
-                   <td> <img src="hp.gif" alt="image" width="400" height="400"/></td>
+                   <td> <img src="${image}" alt="image" width="300" height="400"/></td>
                 </tr>
             </table>
         </div>
@@ -28,8 +29,8 @@
             <td style="font-size: 20px; width:450px ;height:300px; text-align: center">
                 <table>
                     <tr>
-                        <td><label id="costLable">Cost </label></td>      
-                        <td><input readonly name="priceLabel" value="${cost}" /></td>            
+                        <td><label id="costLable">Cost</label></td>      
+                        <td>$ ${cost}<input type=hidden name="priceLabel" value="${cost}"/> </td>            
                     </tr>
                     <tr>
                         <td><label id="quantityLable">Quantity </label></td>
@@ -40,7 +41,7 @@
             </tr>
             <tr>
                 <td style="width:200px ;height:250px; text-align: center" >
-                     <label style="font-size: 20px">Product Description <br>1.${productDescr}</label><br>
+                    <label style="font-size: 20px"><em>Product Description </em><br>${productDescr}</label><br>
                 </td>
             </tr>
            

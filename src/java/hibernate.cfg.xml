@@ -14,8 +14,8 @@
     <mapping resource="com/pojos/Productcustomattr.hbm.xml"/>
     <mapping resource="com/pojos/Shippingaddress.hbm.xml"/>
     <mapping resource="com/pojos/Productprices.hbm.xml"/>
-    <mapping resource="com/pojos/Customercredentials.hbm.xml"/>
     <mapping resource="com/pojos/Customercontact.hbm.xml"/>
+    <mapping resource="com/pojos/Customercredentials.hbm.xml"/>
     <mapping resource="com/pojos/StoreCategories.hbm.xml"/>
     <mapping resource="com/pojos/Admincredentials.hbm.xml"/>
     <mapping resource="com/pojos/Productdetail.hbm.xml"/>

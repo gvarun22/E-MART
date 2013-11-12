@@ -1,14 +1,27 @@
 
 package com.emart;
 
+import com.opensymphony.xwork2.ActionSupport;
+
 /**
  *
  * @author Kunal
  */
-public class PurchaseActionClass {
+public class PurchaseActionClass extends ActionSupport {
     int quantity;
     float priceLabel;
     double totalAmount;
+    int productId;
+
+    public int getProductId() {
+        return productId;
+    }
+
+    public void setProductId(int productId) {
+        this.productId = productId;
+    }
+    
+    
     public int getQuantity() {
         return quantity;
     }
@@ -37,11 +50,13 @@ public class PurchaseActionClass {
         System.out.println("quantity desired: "+quantity);
         System.out.println("price: "+priceLabel);
         totalAmount = quantity*priceLabel;
-        if(totalAmount!=0.00){
+        totalAmount=Math.round(totalAmount * 100.0) / 100.0;
+        if(totalAmount>0){
             return "success";
         }
         else{
-            return "fail";
+             addActionError(getText("purchase.invalidquantity"));
+            return "error";
         }
     }
 }
