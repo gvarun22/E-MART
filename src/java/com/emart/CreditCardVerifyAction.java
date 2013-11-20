@@ -6,6 +6,10 @@
 
 package com.emart;
 
+import ws_creditcard.CardCheckWS;
+import ws_creditcard.CardCheckWS_Service;
+
+
 /**
  *
  * @author Varun
@@ -22,7 +26,11 @@ public class CreditCardVerifyAction {
     }
     public String execute()
     {
-        if(cardNum.equals("1234"))
+        CardCheckWS_Service service=new CardCheckWS_Service();
+        CardCheckWS cc=service.getCardCheckWSPort();
+String stat=cc.verifyCard(cardNum);
+//System.out.println("Stat"+stat);
+        if(stat.equals("True"))
         {
             return "success";
         }

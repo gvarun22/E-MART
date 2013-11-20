@@ -5,6 +5,8 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="s" uri="/struts-tags"%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,12 +14,13 @@
         <title>JSP Page</title>
     </head>
     <body>
-           <form action="cardVerify">
-               <h3><label for="name">Total amount for the shopping is: </label>
-               <label id="totalamount">${totalAmount}</label></h3><br/>
-                 <label for="name">Please enter your Card Number</label><br/>
-                 <input type="text" name="cardNum"/>
-                 <input type="submit" value="Validate"/>
-           </form>
+          <s:form method="post" action="cardVerify" >
+              <h1>Please Enter your Credit Card Details </h1>
+               <s:textfield name="cardNum" label="CardNumber" /><br>
+               <s:textfield name="cvcNum" label="CVCNumber" /><br>
+               <s:select  list="{'Visa','MasterCard','Discover','American Express'}" name="CardType" label="Card Type"/><br>
+               <s:submit value="Validate" />
+                 </s:form>
+    </body>
     </body>
 </html>

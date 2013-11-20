@@ -41,7 +41,7 @@ public class LoginAction extends ActionSupport {
         try{
         Class.forName("com.mysql.jdbc.Driver");
        
-        con = DriverManager.getConnection("jdbc:mysql://localhost/e-mart-1","root", "root");
+        con = DriverManager.getConnection("jdbc:mysql://localhost/e-mart-1","root", "rahul");
         //nn.close();   
         //Connection con=DriverManager.getConnection("jdbc:mysql://localhost/e-mart-1?" +"user=root&password=pass");
         st=con.createStatement();

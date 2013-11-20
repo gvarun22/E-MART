@@ -43,7 +43,20 @@
         <action name="login" class="com.emart.LoginAction"
         method="execute">
             <result name="success">CategorySearch.jsp</result>
-            <result name="input">login.jsp</result>
+            <result name="input">search.jsp</result>
+        </action>
+    </package>
+    
+    <package name="UserRegistration" extends="struts-default">
+        <action name="RegisterAction" class="com.emart.RegisterAction"
+        method="execute">
+            <result name="success">/CategorySearch.jsp</result>
+            <result name="input">/search.jsp</result>
+        </action>
+    </package>
+    <package name="SelectAction" extends="struts-default">
+        <action name="SelectAction" class="com.emart.SelectAction"
+        method="execute">
         </action>
     </package>
 </struts>
