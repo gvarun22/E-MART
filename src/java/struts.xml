@@ -59,4 +59,11 @@
         method="execute">
         </action>
     </package>
+    <package name="NavigateTORegister" extends="struts-default">
+        <action name="NavigateTORegister" class="com.emart.NavigateTORegister"
+        method="execute">
+             <result name="success">/UserRegistration.jsp</result>
+        </action>
+    </package>
+    
 </struts>

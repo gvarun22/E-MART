@@ -23,8 +23,10 @@
         </group>
         <group>
             <file>file:/C:/Users/Rahul/Desktop/EMART_CLONE/E-MART/src/java/com/emart/RegisterAction.java</file>
-            <file>file:/C:/Users/Rahul/Desktop/EMART_CLONE/E-MART/src/java/com/emart/CreditCardVerificationWS.java</file>
-            <file>file:/C:/Users/Rahul/Desktop/EMART_CLONE/E-MART/src/java/com/emart/SearchItemAction.java</file>
+            <file>file:/C:/Users/Rahul/Desktop/EMART_CLONE/E-MART/src/java/struts.xml</file>
+            <file>file:/C:/Users/Rahul/Desktop/EMART_CLONE/E-MART/web/login.jsp</file>
+            <file>file:/C:/Users/Rahul/Desktop/EMART_CLONE/E-MART/src/java/com/pojos/Customer.java</file>
+            <file>file:/C:/Users/Rahul/Desktop/EMART_CLONE/E-MART/src/java/com/emart/NavigateTORegister.java</file>
             <file>file:/C:/Users/Rahul/Desktop/EMART_CLONE/E-MART/src/java/com/pojos/RegisterUitility.java</file>
             <file>file:/C:/Users/Rahul/Desktop/EMART_CLONE/E-MART/web/UserRegistration.jsp</file>
         </group>

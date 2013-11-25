@@ -56,13 +56,25 @@ public class RegisterUitility {
 
           Customercredentials ccreds= new Customercredentials();
           ccreds.setAccountActive(1);
-          ccreds.setCustomer(customer);
+        //  ccreds.setCustomer(customer);
           ccreds.setCustomerLogin(userName);
           ccreds.setCustomerPassword(password);
           
           s.persist(ccreds);
           s.getTransaction().commit();
 
+          
+      }
+      public void PersistCustomerContact(String email,String dayPhone, String eveningPhone){
+           Session s = sessionFactory.openSession();
+           Transaction tx = s.beginTransaction();
+          Customercontact cc = new Customercontact();
+          cc.setCustomerEmail(email);
+          cc.setCustomerPhoneDay(dayPhone);
+          cc.setCustomerPhoneNight(eveningPhone);
+          s.persist(cc);
+          s.getTransaction().commit();
+          
           
       }
 }

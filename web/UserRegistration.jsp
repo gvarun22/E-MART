@@ -25,6 +25,10 @@
             <s:textfield name="LastName" label="LastName(*)" />
             <s:textfield name="Address" label="Address" />
             <s:textfield name="Gender"  label="Gender" />
+            <s:textfield name="dayPhone"  label="Day Phone" />
+            <s:textfield name="eveningPhone"  label="Evening Phone" />
+            <s:textfield name="email"  label="Email Id" />
+
             <s:submit value="Register"/>
         </s:form>
     </body>

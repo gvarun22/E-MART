@@ -19,6 +19,33 @@ public class RegisterAction {
     String Address;
     String username;
     String password;
+    String dayPhone;
+    String eveningPhone;
+    String email;
+
+    public String getDayPhone() {
+        return dayPhone;
+    }
+
+    public void setDayPhone(String dayPhone) {
+        this.dayPhone = dayPhone;
+    }
+
+    public String getEveningPhone() {
+        return eveningPhone;
+    }
+
+    public void setEveningPhone(String eveningPhone) {
+        this.eveningPhone = eveningPhone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
     public String getFirstName() {
         return FirstName;
@@ -74,6 +101,7 @@ public class RegisterAction {
     public String execute() throws Exception {
         RegisterUitility ru=new RegisterUitility();
         ru.PersistCustomer( FirstName, LastName,Gender,Address,username,password);
+        ru.PersistCustomerContact(email, dayPhone, eveningPhone);
         return "success";
         
     }
