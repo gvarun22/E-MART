@@ -15,11 +15,12 @@
             <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/src/java/com/emart/SearchItemAction.java</file>
             <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/setup/glassfish-resources.xml</file>
             <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/src/java/com/pojos/ItemUtility.java</file>
-            <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/src/java/com/myapp/struts/ApplicationResource.properties</file>
-            <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/src/java/com/pojos/SearchUtility.java</file>
             <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/src/java/com/emart/PurchaseActionClass.java</file>
+            <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/src/java/com/pojos/SearchUtility.java</file>
             <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/web/SearchPage.jsp</file>
             <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/web/Item.jsp</file>
+            <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/src/java/com/myapp/struts/ApplicationResource.properties</file>
+            <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/nbproject/build-impl.xml</file>
         </group>
     </open-files>
 </project-private>

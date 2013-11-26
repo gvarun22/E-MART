@@ -12,7 +12,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
         <s:head/>
-        
+
     </head>
     <body>
         <h1>Please Login to continue!</h1>
@@ -21,8 +21,8 @@
             <s:textfield name="username" label="User Name" />
             <s:password name="password" label="Password"/>
             <s:submit value="Login"/> <s:submit value="Register"  action="NavigateTORegister"/>
-            
+
         </s:form>
-        
+
     </body>
 </html>
