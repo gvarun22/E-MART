@@ -5,7 +5,6 @@
         <group name="ALL">
             <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/src/java/com/emart/LoginAction.java</file>
             <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/web/login.jsp</file>
-            <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/web/Login/homepage.jsp</file>
             <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/src/java/com/pojos/Productprices.java</file>
             <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/web/CategorySearch.jsp</file>
             <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/web/WEB-INF/web.xml</file>
@@ -16,19 +15,11 @@
             <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/src/java/com/emart/SearchItemAction.java</file>
             <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/setup/glassfish-resources.xml</file>
             <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/src/java/com/pojos/ItemUtility.java</file>
-            <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/src/java/com/emart/PurchaseActionClass.java</file>
+            <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/src/java/com/myapp/struts/ApplicationResource.properties</file>
             <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/src/java/com/pojos/SearchUtility.java</file>
+            <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/src/java/com/emart/PurchaseActionClass.java</file>
             <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/web/SearchPage.jsp</file>
             <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/web/Item.jsp</file>
-        </group>
-        <group>
-            <file>file:/C:/Users/Rahul/Desktop/EMART_CLONE/E-MART/src/java/com/emart/RegisterAction.java</file>
-            <file>file:/C:/Users/Rahul/Desktop/EMART_CLONE/E-MART/src/java/struts.xml</file>
-            <file>file:/C:/Users/Rahul/Desktop/EMART_CLONE/E-MART/web/login.jsp</file>
-            <file>file:/C:/Users/Rahul/Desktop/EMART_CLONE/E-MART/src/java/com/pojos/Customer.java</file>
-            <file>file:/C:/Users/Rahul/Desktop/EMART_CLONE/E-MART/src/java/com/emart/NavigateTORegister.java</file>
-            <file>file:/C:/Users/Rahul/Desktop/EMART_CLONE/E-MART/src/java/com/pojos/RegisterUitility.java</file>
-            <file>file:/C:/Users/Rahul/Desktop/EMART_CLONE/E-MART/web/UserRegistration.jsp</file>
         </group>
     </open-files>
 </project-private>

@@ -6,7 +6,7 @@
     <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
     <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/e-mart-1</property>
     <property name="hibernate.connection.username">root</property>
-    <property name="hibernate.connection.password">rahul</property>
+    <property name="hibernate.connection.password">root</property>
     <mapping resource="com/pojos/Orderitems.hbm.xml"/>
     <mapping resource="com/pojos/Billingaddress.hbm.xml"/>
     <mapping resource="com/pojos/Product.hbm.xml"/>
