@@ -21,7 +21,32 @@
                 <option value="Apparel">Apparel</option> 
                 <option  value="Games">Games</option> 
                 <option value="Pharmacy">Pharmacy</option> 
-            <input type="submit" value="Search"/>
+                <input type="submit" value="Search"/>
         </form>
+        <div>
+            <h1>Recommended products</h1>
+            <big>
+                <div align="center">
+                    <table border="1">
+                        <tr>
+                            <s:iterator value="products" var='item'>
+
+                                <td>
+                                    <s:url action="callSelectItemActionClass" var="urlTag" >
+                                        <s:param name="productId">${item.productId}</s:param> 
+                                    </s:url>                       
+                                    <a href="<s:property value="#urlTag"/>"  style="">
+                                        <img src="${item.productPic}" width="200" height="200"/><br/>
+                                        <b>${item.productName}</b><br />
+                                        <b>$ ${item.productPrice}</b>
+                                    </a>                      
+                                </td>
+
+                            </s:iterator>
+                        </tr>
+                    </table>
+                </div>
+            </big>
+        </div>
     </body>
 </html>
