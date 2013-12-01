@@ -5,7 +5,6 @@
  */
 package com.emart;
 
-import com.opensymphony.xwork2.ActionSupport;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,7 +12,7 @@ import java.util.List;
  *
  * @author Rahul
  */
-public class SelectAction extends ActionSupport {
+public class SelectAction{
 
     String CardType;
     List<String> CardTypeList;
