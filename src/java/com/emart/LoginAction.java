@@ -1,8 +1,8 @@
 package com.emart;
 
 
-import static com.opensymphony.xwork2.Action.INPUT;
-import static com.opensymphony.xwork2.Action.SUCCESS;
+import static com.opensymphony.xwork2.Action.*;
+//import static com.opensymphony.xwork2.Action.SUCCESS;
 import com.opensymphony.xwork2.ActionSupport;
 import com.pojos.CustomerUtility;
 import com.pojos.ItemUtility;
