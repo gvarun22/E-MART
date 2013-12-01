@@ -42,6 +42,9 @@ public class CustomerUtility {
          List list=li.list();
          String val= (String) list.get(0);
         tx.commit();
+        
         return val;
     }
+    
+    
 }

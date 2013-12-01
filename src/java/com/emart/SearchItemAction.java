@@ -5,8 +5,10 @@
  */
 package com.emart;
 
+import com.emart.controllers.UserManager;
 import com.pojos.SearchUtility;
 import java.util.List;
+import javax.inject.Inject;
 
 /**
  *
@@ -18,6 +20,9 @@ public class SearchItemAction {
     private List newList;
     private List categoryList;
     private String prodCategory;
+    
+    @Inject
+    private UserManager um;
 
     public SearchItemAction() {
     }

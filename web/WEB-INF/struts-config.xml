@@ -24,7 +24,7 @@
     
     <controller processorClass="org.apache.struts.tiles.TilesRequestProcessor"/>
 
-    <message-resources parameter="com/myapp/struts/ApplicationResource"/>    
+    <message-resources parameter=""/>    
     
     <!-- ========================= Tiles plugin ===============================-->
     <!--

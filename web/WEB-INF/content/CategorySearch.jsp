@@ -5,10 +5,12 @@
     "http://www.w3.org/TR/html4/loose.dtd">
 <html>
     <head>
+        <link rel="stylesheet" type="text/css" href="css/global.css">
         <title>E-MART</title>
     </head>
     <body>
-        <h1>Welcome to E-MART</h1>
+        <div class="top-toolbar"><a href="/E-MART/Logout">Logout</a></div>
+        <h1>Welcome to E-MART ${userManager.cust.firstName}</h1>
         <form method="post" action="Search">
             <label for="name">Name of Product</label><br/>
             <input type="text" name="name"/>

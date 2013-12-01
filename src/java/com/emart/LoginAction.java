@@ -1,9 +1,12 @@
 package com.emart;
 
 
+import com.emart.controllers.UserManager;
 import static com.opensymphony.xwork2.Action.INPUT;
 import static com.opensymphony.xwork2.Action.SUCCESS;
 import com.opensymphony.xwork2.ActionSupport;
+import com.pojos.Customer;
+import com.pojos.CustomerCredentialsUtility;
 import com.pojos.CustomerUtility;
 import com.pojos.ItemUtility;
 import com.pojos.OrderUtil;
@@ -11,6 +14,7 @@ import static com.sun.corba.se.impl.orbutil.CorbaResourceUtil.getText;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import javax.inject.Inject;
 
 /**
  *
@@ -23,6 +27,9 @@ public class LoginAction extends ActionSupport {
     private String productName;
     private List products;
 
+    @Inject
+    private UserManager um;
+    
     public List getProducts() {
         return products;
     }
@@ -103,6 +110,12 @@ public class LoginAction extends ActionSupport {
             
             if(password2.equals(getPassword()))
             {
+                CustomerCredentialsUtility cc = new CustomerCredentialsUtility();
+                Customer cust = cc.getCustomerByCredentials(username);
+                System.out.println(cust.getFirstName());
+                um.setCust(cust);
+                um.setLogged_in(true);
+                
                 return SUCCESS;
             }
             else

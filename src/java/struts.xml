@@ -4,66 +4,81 @@
    "http://struts.apache.org/dtds/struts-2.0.dtd">
 <struts>
     <constant name="struts.devMode" value="true" />
-    <package name="helloworld" extends="struts-default">
-     
+    <package name="emart" extends="struts-default" namespace="/">
+       
+        <interceptors>
+            
+            <interceptor name="authentication"
+                         class="com.emart.filters.AuthenticationVerify">
+            </interceptor>
+            <interceptor-stack name="stack-with-login">
+                <interceptor-ref name="authentication"/>
+                <interceptor-ref name="defaultStack"/>
+            </interceptor-stack>
+        </interceptors>
+        <default-interceptor-ref name="stack-with-login"></default-interceptor-ref>
+
+        <global-results>
+            <result type="redirect" name="login">/login.jsp</result>
+        </global-results>
+        
+        
         <action name="Search" 
                 class="com.emart.SearchItemAction" 
                 method="execute">
-            <result name="success">/CategorySearchResults.jsp</result>
-            <result name="error">/Failure.jsp</result>
+            <result name="success">/WEB-INF/content/CategorySearchResults.jsp</result>
+            <result name="error">/WEB-INF/content/Failure.jsp</result>
         </action>
-    </package>
-    <package name="validateVard" extends="struts-default">
+
      
         <action name="cardVerify" 
                 class="com.emart.CreditCardVerifyAction" 
                 method="execute">
-            <result name="success">/Success.jsp</result>
-            <result name="error">/Failure.jsp</result>
+            <result name="success">/WEB-INF/content/Success.jsp</result>
+            <result name="error">/WEB-INF/content/Failure.jsp</result>
         </action>
-    </package>
-    <package name="selectitem" extends="struts-default">
         <action name="callSelectItemActionClass" 
                 class="com.emart.SelectItemAction" 
                 method="execute">
-            <result name="success">/Item.jsp</result>
-            <result name="error">/Failure.jsp</result>
+            <result name="success">/WEB-INF/content/Item.jsp</result>
+            <result name="error">/WEB-INF/content/Failure.jsp</result>
         </action>
-    </package>
-    
-    <package name="itempurchase" extends="struts-default">
         <action name="purchase" 
                 class="com.emart.PurchaseActionClass" 
                 method="execute">
-            <result name="success">/verifyCard.jsp</result>
-            <result name="error">/Item.jsp</result>
+            <result name="success">/WEB-INF/content/verifyCard.jsp</result>
+            <result name="error">/WEB-INF/content/Item.jsp</result>
         </action>
-    </package>
-    <package name="login" extends="struts-default">
         <action name="login" class="com.emart.LoginAction"
-        method="execute">
-            <result name="success">/CategorySearch.jsp</result>
-            <result name="input">/login.jsp</result>
+                method="execute">
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+            <result type="redirect" name="success">Home</result>
+            <result type="redirect" name="input">/login.jsp</result>
         </action>
-    </package>
-    
-    <package name="UserRegistration" extends="struts-default">
         <action name="RegisterAction" class="com.emart.RegisterAction"
-        method="execute">
-            <result name="success">/CategorySearch.jsp</result>
-            <result name="input">/search.jsp</result>
+                method="execute">
+            <result name="success">/WEB-INF/content/CategorySearch.jsp</result>
+            <result name="input">/WEB-INF/content/search.jsp</result>
         </action>
-    </package>
-    <package name="SelectAction" extends="struts-default">
         <action name="SelectAction" class="com.emart.SelectAction"
-        method="execute">
+                method="execute">
         </action>
-    </package>
-    <package name="NavigateTORegister" extends="struts-default">
         <action name="NavigateTORegister" class="com.emart.NavigateTORegister"
-        method="execute">
-             <result name="success">/UserRegistration.jsp</result>
+                method="execute">
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+            <result name="success">/WEB-INF/content/UserRegistration.jsp</result>
         </action>
-    </package>
-    
+        <action name="Home" 
+                class="com.emart.HomeAction" 
+                method="execute">
+            <result name="success">/WEB-INF/content/CategorySearch.jsp</result>
+            <result name="error">/WEB-INF/content/Failure.jsp</result>
+        </action>
+        <action name="Logout" 
+                class="com.emart.LogoutAction" 
+                method="execute">
+            <result type="redirect" name="success">/login.jsp</result>
+            <result type="redirect" name="error">/WEB-INF/content/Failure.jsp</result>
+        </action>
+    </package>  
 </struts>
