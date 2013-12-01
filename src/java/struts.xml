@@ -80,5 +80,20 @@
             <result type="redirect" name="success">/login.jsp</result>
             <result type="redirect" name="error">/WEB-INF/content/Failure.jsp</result>
         </action>
+        
+        <action name="AddToCart" 
+                        class="com.emart.AddToCartAction" 
+                        method="execute">
+            <result type="redirect" name="success">ViewCart</result>
+            <result type="redirect" name="error">/WEB-INF/content/Failure.jsp</result>
+        </action>
+        
+        <action name="ViewCart" 
+                        class="com.emart.ViewCartAction" 
+                        method="execute">
+            <result name="success">/WEB-INF/content/Cart.jsp</result>
+            <result name="error">/WEB-INF/content/Failure.jsp</result>
+        </action>
+        
     </package>  
 </struts>

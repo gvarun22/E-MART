@@ -1,10 +1,10 @@
 package com.emart;
 
+import com.emart.controllers.CurrentItem;
 import com.pojos.ItemUtility;
 import com.pojos.Product;
-import java.io.File;
 import java.io.FileOutputStream;
-import java.io.IOException;
+import javax.inject.Inject;
 
 /**
  *
@@ -12,6 +12,9 @@ import java.io.IOException;
  */
 public class SelectItemAction {
 
+    @Inject
+    private CurrentItem cu;
+    
     Product product;
     int productId;
     String productName;
@@ -84,6 +87,8 @@ public class SelectItemAction {
         productDescr = iu.getProductDescription(productId);
         image = iu.getProductImage(productId);
         System.out.println("image description: " + image);
+        product = iu.getCompleteProduct(productId);
+        cu.setProd(product);
 //       
 //     
 //            File file = new File("Test1.gif");
