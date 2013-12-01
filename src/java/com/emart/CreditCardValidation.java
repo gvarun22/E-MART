@@ -74,7 +74,7 @@ public class CreditCardValidation {
 
         CreditCardValidation ccv = new CreditCardValidation();
         ccv.verifyCard("123456789");
-        CreditCardValidation cc=new CreditCardValidation();
+        CreditCardValidation cc = new CreditCardValidation();
         Endpoint.publish("http://localhost:8086/verifyCard", new CardCheckWS() {
 
             @Override
@@ -89,5 +89,4 @@ public class CreditCardValidation {
         });
 
     }
-}
 }
