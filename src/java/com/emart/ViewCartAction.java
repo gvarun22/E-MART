@@ -19,37 +19,36 @@ import javax.inject.Inject;
  */
 public class ViewCartAction extends ActionSupport {
 
-    @Inject 
+    @Inject
     private ShoppingCart sc;
-    private Set<Product> cart_items;
-    
+    private Map<Integer, Product> items_map;
+    private Map<Integer, Integer> item_qty_map;
 
-    public Set<Product> getCart_items() {
-        return cart_items;
-    }
-
-    public void setCart_items(Set<Product> cart_items) {
-        this.cart_items = cart_items;
-    }
-
-    public String getTest() {
-        return test;
-    }
-
-    public void setTest(String test) {
-        this.test = test;
-    }
-    private String test = "dupa";
     public ViewCartAction() {
     }
 
+    @Override
     public String execute() throws Exception {
-        cart_items = sc.getItems();
-        for(Product each_item : cart_items) {
-            System.out.println(each_item.getProductName());
-            
-        }
+        items_map= sc.getItems_map();
+        item_qty_map = sc.getItem_qty_map();
+              
         return SUCCESS;
+    }
+
+    public Map<Integer, Product> getItems_map() {
+        return items_map;
+    }
+
+    public void setItems_map(Map<Integer, Product> items_map) {
+        this.items_map = items_map;
+    }
+
+    public Map<Integer, Integer> getItem_qty_map() {
+        return item_qty_map;
+    }
+
+    public void setItem_qty_map(Map<Integer, Integer> item_qty_map) {
+        this.item_qty_map = item_qty_map;
     }
 
 }

@@ -26,7 +26,7 @@ public class AddToCartAction extends ActionSupport {
 
     public String execute() throws Exception {
 
-            sc.addItem(ci.getProd());
+            sc.addItem(ci.getProd(), 1);
             return SUCCESS;
     }
 

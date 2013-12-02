@@ -11,23 +11,30 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <link rel="stylesheet" type="text/css" href="css/global.css">
+        <title>Shopping Cart</title>
     </head>
     <body>
         <h1>Shopping Cart:</h1>
-        
-        
-    
-        <s:iterator value="cart_items" var='item'>
 
-            <table>
-                <tr>
-                    <td>${item.productName}</td>
-                </tr>
-            </table>
-      
 
-    </s:iterator>
+        <table cellspacing="0" class="cart-items">
+            <thead><tr><th>Item Name</th><th>Quantity</th><th>Update</th></tr></thead>
+                        <s:iterator value="items_map.keySet()" var='item'>
 
-</body>
+                
+                    <tr>
+                        <td>${items_map.get(item).productName}</td>
+
+                        <td><input type="text" maxlength="4" size="3" name="qty" value="${item_qty_map.get(item)}" /></td>
+                        <td><input type="button" value="Update"/></td>
+
+
+
+                    </tr>
+                
+            </s:iterator>
+        </table>
+
+    </body>
 </html>

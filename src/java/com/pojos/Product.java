@@ -127,7 +127,12 @@ public class Product  implements java.io.Serializable {
     }
 
 
-
+    public boolean equals(Product p) {
+        if(this.productId == p.getProductId())
+        return true;
+        
+        return false;
+    }
 
 }
 

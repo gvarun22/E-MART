@@ -8,3 +8,20 @@ and open the template in the editor.
     Author     : punker
 */
 
+.cart-items { 
+
+}
+
+.cart-items td, .cart-items th {
+    width: 200px;
+    text-align: center;
+    border-top: 1px solid black;
+    padding: 5px;
+}
+
+.cart-items th {
+    color: white;
+    background: black;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
