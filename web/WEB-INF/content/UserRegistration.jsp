@@ -11,6 +11,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+         <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
         <title>User Registration Page</title>
     </head>
     <body>
