@@ -2,15 +2,13 @@ package com.emart;
 
 
 import com.emart.controllers.UserManager;
-import static com.opensymphony.xwork2.Action.INPUT;
-import static com.opensymphony.xwork2.Action.SUCCESS;
+import static com.opensymphony.xwork2.Action.*;
 import com.opensymphony.xwork2.ActionSupport;
 import com.pojos.Customer;
 import com.pojos.CustomerCredentialsUtility;
 import com.pojos.CustomerUtility;
 import com.pojos.ItemUtility;
 import com.pojos.OrderUtil;
-import static com.sun.corba.se.impl.orbutil.CorbaResourceUtil.getText;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -120,7 +118,7 @@ public class LoginAction extends ActionSupport {
             }
             else
             {
-            addActionError(getText("login.invaliduser"));
+            this.addActionError(getText("login.invaliduser"));
             return INPUT;
             }
           
