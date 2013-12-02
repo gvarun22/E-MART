@@ -21,47 +21,12 @@ import javax.inject.Inject;
 public class LoginAction extends ActionSupport {
     private String username;
     private String password;
-    private List popularItems;
-    private String productName;
-    private List products;
+ 
 
     @Inject
     private UserManager um;
     
-    public List getProducts() {
-        return products;
-    }
-
-    public void setProducts(List products) {
-        this.products = products;
-    }
-
-    
-
-    public String getProductName() {
-        return productName;
-    }
-
-    public void setProductName(String productName) {
-        this.productName = productName;
-    }
-
-    public String getProductImg() {
-        return productImg;
-    }
-
-    public void setProductImg(String productImg) {
-        this.productImg = productImg;
-    }
-    private String productImg;
-
-    public List getPopularItems() {
-        return popularItems;
-    }
-
-    public void setPopularItems(List popularItems) {
-        this.popularItems = popularItems;
-    }
+   
     Statement st=null;
     Connection con=null;
     ResultSet rs;
@@ -86,26 +51,11 @@ public class LoginAction extends ActionSupport {
     public String execute() throws Exception{
         
             CustomerUtility cu=new CustomerUtility();
-            OrderUtil ou= new OrderUtil();
-            ItemUtility iu=new ItemUtility();
+           
             String password2;
             password2 = cu.getPassword(getUsername());
              
-            popularItems=ou.getHighestSellingProducts();
-            
-            ProductAttr pa=new ProductAttr();
-            products=new ArrayList();
-            
-            for(Object i:popularItems)
-            {
-                pa.setProductName(iu.getProductName((Integer) i));
-                pa.setProductId((Integer) i);
-                pa.setProductPic(iu.getProductImage((Integer) i));
-                pa.setProductPrice(Math.round(iu.getProductCost((Integer)i) * 1000)/1000.0);
-                products.add(pa);
-                pa=new ProductAttr();
-            }
-            
+           
             if(password2.equals(getPassword()))
             {
                 CustomerCredentialsUtility cc = new CustomerCredentialsUtility();
