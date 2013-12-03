@@ -2,13 +2,12 @@
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <html>
     <head>
-         <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
         <title>Results</title>
     </head>
     <body>
         <form >
-            <div class="container">
-                <table class="table table-striped">
+            <div>
+                <table style="border-style: solid">
                     <s:iterator value="newList">
                         <tr>
                             <td>

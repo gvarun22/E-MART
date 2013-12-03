@@ -5,7 +5,7 @@
     "http://www.w3.org/TR/html4/loose.dtd">
 <html>
     <head>
-         <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="css/global.css">
         <title>E-MART</title>
     </head>
     <body>
@@ -23,7 +23,7 @@
                 <option value="Apparel">Apparel</option> 
                 <option  value="Games">Games</option> 
                 <option value="Pharmacy">Pharmacy</option> 
-                <input type="submit" value="Search" class="btn btn-default"/>
+                <input type="submit" value="Search"/>
         </form>
         <div>
             <h1>Recommended products</h1>

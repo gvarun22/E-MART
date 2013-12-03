@@ -10,28 +10,19 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
         <title>JSP Page</title>
-     </head>
+        <s:head/>
+
+    </head>
     <body>
-        <div class="container">
         <h1>Please Login to continue!</h1>
         <s:actionerror/>
+        <s:form method="post" action="login">
+            <s:textfield name="username" label="User Name" />
+            <s:password name="password" label="Password"/>
+            <s:submit value="Login"/> <s:submit value="Register"  action="NavigateTORegister"/>
 
-        <form method="post" action="login" role="form">
-            <div class="form-group">
-                <label for="username">User Name</label>
-                <input name="username" id="username" label="User Name" class="form-control"   />
-            </div>
-            <div class="form-group">
-                <label for="password">password</label>
-                <input type="password" name="password" id="password" label="Password"class="form-control" />
-            </div>
-            
-            <button type="submit" value="Login" class="btn btn-default">Login</button> 
-            <button type="submit" value="Register" class="btn btn-default" action="NavigateTORegister">Register</button> 
+        </s:form>
 
-        </form>
-        </div>
     </body>
 </html>
