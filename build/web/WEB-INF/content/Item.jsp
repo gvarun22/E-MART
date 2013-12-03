@@ -11,10 +11,26 @@
 <%@ taglib prefix="s" uri="/struts-tags"%>
 
 <html>
+    <head
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+    </head>
 
     <body>
         <s:actionerror/>
         <!--<form action="purchase" method="post"> -->
+        <header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
+                <div class="navbar-header">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="/E-MART/Logout" class="navbar-brand"> Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </header>
+    <br/>
+    <br/>
+    <br/>
         <div style="width: 400px;float:left;">
             <table>
                 <tr>
