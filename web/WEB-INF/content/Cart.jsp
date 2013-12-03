@@ -10,7 +10,8 @@
 
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <div class="container">
+         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
         <title>Shopping Cart</title>
     </head>
@@ -18,23 +19,23 @@
         <h1>Shopping Cart:</h1>
 
 
-        <table cellspacing="0" class="table table-striped">
+        <table cellspacing="0" class="table table-bordered">
             <thead><tr><th>Item Name</th><th>Quantity</th><th>Update</th></tr></thead>
                         <s:iterator value="items_map.keySet()" var='item'>
 
-                
-                    <tr>
-                        <td>${items_map.get(item).productName}</td>
 
-                        <td><input type="text" maxlength="4" size="3" name="qty" value="${item_qty_map.get(item)}" /></td>
-                        <td><input type="button" value="Update"/></td>
+                <tr>
+                    <td>${items_map.get(item).productName}</td>
+
+                    <td><input type="text" maxlength="4" size="3" name="qty" value="${item_qty_map.get(item)}" /></td>
+                    <td><input type="button" value="Update"/></td>
 
 
 
-                    </tr>
-                
+                </tr>
+
             </s:iterator>
         </table>
-
-    </body>
+</div>
+</body>
 </html>
