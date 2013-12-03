@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
          pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
+<%@ page import="Facebook.SimpleTest" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
     "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -72,6 +73,19 @@
                                 </div>
                             </big>
                         </div>
+                        <h1>Facebook Recommendations</h1>
+                        <big>
+                            <div align="center">
+                                <table class="table table-bordered">
+                                    <tr>
+                                        <h1>             
+                                        <td>${facebookReco}</td>
+                                        </h1>
+                                    </tr>
+                                </table>
+                                
+                            </div>
+                        </big>
                     </div>
                 </div>
             </div>

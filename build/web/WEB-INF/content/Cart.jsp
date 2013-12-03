@@ -10,28 +10,53 @@
 
 <html>
     <head>
-    <div class="container">
-         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="css/global.css">
         <title>Shopping Cart</title>
     </head>
     <body>
         <h1>Shopping Cart:</h1>
 
 
-        <table cellspacing="0" class="table table-bordered">
-            <thead><tr><th>Item Name</th><th>Quantity</th><th>Update</th></tr></thead>
-                        <s:iterator value="items_map.keySet()" var='item'>
+        <table cellspacing="0" class="cart-items">
+            <thead><tr><th>Item Name</th><th>Quantity</th><th>Price</th><th>Update</th></tr></thead>
+        </table>            
+        <s:iterator value="items_map.keySet()" var='item'>
+
+            <div class="row-div">
+
+                <div class="col1 coldiv">
+                    ${items_map.get(item).productName}
+                </div>
 
 
-                <tr>
-                    <td>${items_map.get(item).productName}</td>
-                    <td><input type="text" maxlength="4" size="3" name="qty" value="${item_qty_map.get(item)}" /></td>
-                    <td><input type="button" value="Update"/></td>
-                </tr>
+                <form action="UpdateCart">
+                    <div class="col2 coldiv">
+                        <input type="text" maxlength="4" size="3" name="qty" value="${item_qty_map.get(item)}" />
+                        <input type="hidden" name="prod_id" value="${item}"/>
+                    </div>
+                    <div class="col3 coldiv">
+                        ${shoppingCart.ch.getProductPrice(items_map.get(item))}
 
-            </s:iterator>
-        </table>
-</div>
-</body>
+                    </div>
+
+                    <div class="col3 coldiv">
+                        <input type="submit" value="Update Quantity"/>
+                    </div>
+                </form>
+
+
+            </div>
+
+        </s:iterator>
+        <div class="checkout">
+
+            <s:url action="purchase" var="urlTag" >
+
+            </s:url>
+            <s:a href="%{urlTag}">Checkout</s:a>
+        </div>
+
+
+    </body>
 </html>
