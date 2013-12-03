@@ -17,12 +17,23 @@
     <body>
         <h1>Please Login to continue!</h1>
         <s:actionerror/>
-        <s:form method="post" action="login">
-            <s:textfield name="username" label="User Name" />
-            <s:password name="password" label="Password"/>
-            <s:submit value="Login"/> <s:submit value="Register"  action="NavigateTORegister"/>
 
-        </s:form>
-
+        <form method="post" action="login" role="form">
+            <div class="form-group">
+                <label for="username">User Name</label>
+                <input name="username" id="username" label="User Name" class="form-control-2"   />
+            </div>
+            <div class="form-group">        
+                <label for="password">password</label>
+                <input type="password" name="password" id="password" label="Password"class="form-control-2" />
+            </div>
+            
+            <button type="submit" value="Login" class="btn btn-default"     >Login</button> 
+        </form>
+        <form action="NavigateTORegister">
+            <label>New User? Register here</label><br/>
+            <button type="submit" value="Register" class="btn btn-default"  >Register</button> 
+        </form>
+        </div>
     </body>
 </html>
