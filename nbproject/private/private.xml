@@ -5,21 +5,33 @@
         <group name="ALL">
             <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/src/java/clientWS/ws_creditcard/CardCheckWS_Service.java</file>
             <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/src/java/com/emart/LoginAction.java</file>
-            <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/web/login.jsp</file>
-            <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/nbproject/build-impl.xml</file>
             <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/src/java/com/emart/SelectAction.java</file>
-            <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/src/java/com/pojos/Productprices.java</file>
-            <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/src/java/com/emart/CreditCardValidation.java</file>
-            <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/web/WEB-INF/web.xml</file>
-            <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/src/java/struts.xml</file>
+            <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/web/css/bootstrap-theme.min.css</file>
             <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/src/java/com/emart/SelectItemAction.java</file>
-            <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/src/java/hibernate.cfg.xml</file>
-            <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/src/java/clientWS/ws_creditcard/CardCheckWS.java</file>
+            <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/src/java/struts.xml</file>
+            <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/web/WEB-INF/content/CategorySearch.jsp</file>
             <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/src/java/com/emart/ProductAttr.java</file>
             <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/src/java/com/emart/CreditCardVerifyAction.java</file>
+            <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/web/css/bootstrap.css</file>
             <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/src/java/com/emart/SearchItemAction.java</file>
-            <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/setup/glassfish-resources.xml</file>
             <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/src/java/com/pojos/ItemUtility.java</file>
+            <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/web/WEB-INF/content/Cart.jsp</file>
+            <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/web/login.jsp</file>
+            <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/nbproject/build-impl.xml</file>
+            <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/web/css/global.css</file>
+            <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/src/java/com/pojos/Productprices.java</file>
+            <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/src/java/com/emart/HomeAction.java</file>
+            <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/src/java/com/emart/CreditCardValidation.java</file>
+            <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/web/WEB-INF/web.xml</file>
+            <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/web/WEB-INF/content/CategorySearchResults.jsp</file>
+            <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/src/java/hibernate.cfg.xml</file>
+            <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/web/WEB-INF/content/UserRegistration.jsp</file>
+            <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/src/java/clientWS/ws_creditcard/CardCheckWS.java</file>
+            <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/web/welcomeStruts.jsp</file>
+            <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/web/css/bootstrap-theme.css</file>
+            <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/setup/glassfish-resources.xml</file>
+            <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/web/example/SearchResult.jsp</file>
+            <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/web/css/bootstrap.min.css</file>
             <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/src/conf/persistence.xml</file>
         </group>
     </open-files>

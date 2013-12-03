@@ -8,10 +8,10 @@
     <body>
         <form >
             <div class="container">
-                <table class="table table-striped">
+                <table class="table table-striped" >
                     <s:iterator value="newList">
                         <tr>
-                            <td>
+                            <td align="center">
                                 <s:url action="callSelectItemActionClass" var="urlTag" >
                                     <s:param name="productId">${productId}</s:param> 
                                 </s:url>                       

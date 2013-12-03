@@ -21,16 +21,18 @@
         <form method="post" action="login" role="form">
             <div class="form-group">
                 <label for="username">User Name</label>
-                <input name="username" id="username" label="User Name" class="form-control"   />
+                <input name="username" id="username" label="User Name" class="form-control-2"   />
             </div>
-            <div class="form-group">
+            <div class="form-group">        
                 <label for="password">password</label>
-                <input type="password" name="password" id="password" label="Password"class="form-control" />
+                <input type="password" name="password" id="password" label="Password"class="form-control-2" />
             </div>
             
-            <button type="submit" value="Login" class="btn btn-default">Login</button> 
-            <button type="submit" value="Register" class="btn btn-default" action="NavigateTORegister">Register</button> 
-
+            <button type="submit" value="Login" class="btn btn-default"     >Login</button> 
+        </form>
+        <form action="NavigateTORegister">
+            <label>New User? Register here</label><br/>
+            <button type="submit" value="Register" class="btn btn-default"  >Register</button> 
         </form>
         </div>
     </body>
