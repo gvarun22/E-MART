@@ -11,14 +11,14 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" type="text/css" href="css/global.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
         <title>Shopping Cart</title>
     </head>
     <body>
         <h1>Shopping Cart:</h1>
 
 
-        <table cellspacing="0" class="cart-items">
+        <table cellspacing="0" class="table table-striped">
             <thead><tr><th>Item Name</th><th>Quantity</th><th>Update</th></tr></thead>
                         <s:iterator value="items_map.keySet()" var='item'>
 
