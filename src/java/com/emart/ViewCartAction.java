@@ -5,12 +5,12 @@
  */
 package com.emart;
 
+
+import com.emart.controllers.CartHelper;
 import com.emart.controllers.ShoppingCart;
 import com.opensymphony.xwork2.ActionSupport;
 import com.pojos.Product;
-import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
 import javax.inject.Inject;
 
 /**
@@ -19,18 +19,27 @@ import javax.inject.Inject;
  */
 public class ViewCartAction extends ActionSupport {
 
+
+    
     @Inject
     private ShoppingCart sc;
     private Map<Integer, Product> items_map;
     private Map<Integer, Integer> item_qty_map;
+    
+
 
     public ViewCartAction() {
+        
     }
 
     @Override
     public String execute() throws Exception {
         items_map= sc.getItems_map();
         item_qty_map = sc.getItem_qty_map();
+
+        
+        System.out.println();
+
               
         return SUCCESS;
     }
@@ -50,5 +59,7 @@ public class ViewCartAction extends ActionSupport {
     public void setItem_qty_map(Map<Integer, Integer> item_qty_map) {
         this.item_qty_map = item_qty_map;
     }
+    
+    
 
 }

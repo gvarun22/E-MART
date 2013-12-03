@@ -28,6 +28,8 @@ public class ShoppingCart implements Serializable {
     
     private Map<Integer, Product> items_map;
     private Map<Integer, Integer> item_qty_map;
+    
+    private CartHelper ch;
 
     public Map<Integer, Product> getItems_map() {
         return items_map;
@@ -55,6 +57,15 @@ public class ShoppingCart implements Serializable {
     private void initializeSet() {
         item_qty_map = new HashMap(0);
         items_map = new HashMap(0);
+        ch = new CartHelper();
+    }
+
+    public CartHelper getCh() {
+        return ch;
+    }
+
+    public void setCh(CartHelper ch) {
+        this.ch = ch;
     }
     
     public void addItem(Product P, int qty) {
@@ -67,6 +78,23 @@ public class ShoppingCart implements Serializable {
             items_map.put(P.getProductId(), P);
             item_qty_map.put(P.getProductId(), qty);
         }
+    }
+    
+    public boolean updateItem(int id, int qty) {
+        
+        if(items_map.containsKey(id)) 
+        {
+            item_qty_map.put(id, qty);
+        } else {
+            return false;
+        }
+        
+        if(qty < 1) {
+            items_map.remove(id);
+            item_qty_map.remove(id);
+        }
+        
+        return true;
     }
     
     public void removeItem(Product p) {
