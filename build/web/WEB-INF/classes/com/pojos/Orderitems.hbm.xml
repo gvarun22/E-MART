@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 9, 2013 6:18:25 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="com.pojos.Orderitems" table="orderitems" catalog="`E-MART-1`">
+        <id name="oi" type="java.lang.Integer">
+            <column name="oi" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="storeorders" class="com.pojos.Storeorders" fetch="select">
+            <column name="order_number" />
+        </many-to-one>
+        <many-to-one name="product" class="com.pojos.Product" fetch="select">
+            <column name="product_id" />
+        </many-to-one>
+        <property name="dateCreated" type="date">
+            <column name="date_created" length="10" />
+        </property>
+    </class>
+</hibernate-mapping>

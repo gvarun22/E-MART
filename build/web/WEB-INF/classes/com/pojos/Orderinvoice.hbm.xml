@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 9, 2013 6:18:25 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="com.pojos.Orderinvoice" table="orderinvoice" catalog="`E-MART-1`">
+        <id name="oiId" type="java.lang.Integer">
+            <column name="oi_id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="storeorders" class="com.pojos.Storeorders" fetch="select">
+            <column name="order_id" />
+        </many-to-one>
+        <property name="invoiceDate" type="date">
+            <column name="invoice_date" length="10" />
+        </property>
+        <property name="invoiceStatus" type="string">
+            <column name="invoice_status" length="45" />
+        </property>
+        <property name="invoiceAmount" type="java.lang.Float">
+            <column name="invoice_amount" precision="12" scale="0" />
+        </property>
+    </class>
+</hibernate-mapping>

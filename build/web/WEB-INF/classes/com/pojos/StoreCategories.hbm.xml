@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 9, 2013 6:18:25 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="com.pojos.StoreCategories" table="store_categories" catalog="`E-MART-1`">
+        <id name="catId" type="java.lang.Integer">
+            <column name="cat_id" />
+            <generator class="identity" />
+        </id>
+        <property name="catDescription" type="string">
+            <column name="cat_description" length="45" />
+        </property>
+        <property name="catPicture" type="binary">
+            <column name="cat_picture" />
+        </property>
+        <property name="catActive" type="java.lang.Integer">
+            <column name="cat_active" />
+        </property>
+        <property name="catSearchable" type="string">
+            <column name="cat_searchable" length="45" />
+        </property>
+        <property name="catName" type="string">
+            <column name="cat_name" length="45" not-null="true" unique="true" />
+        </property>
+        <set name="products" table="product" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="cat_id" />
+            </key>
+            <one-to-many class="com.pojos.Product" />
+        </set>
+    </class>
+</hibernate-mapping>

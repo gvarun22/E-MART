@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/e-mart-1</property>
+    <property name="hibernate.connection.username">root</property>
+    <property name="hibernate.connection.password">root</property>
+    <mapping resource="com/pojos/Orderitems.hbm.xml"/>
+    <mapping resource="com/pojos/Billingaddress.hbm.xml"/>
+    <mapping resource="com/pojos/Product.hbm.xml"/>
+    <mapping resource="com/pojos/Orderdetails.hbm.xml"/>
+    <mapping resource="com/pojos/Productcustomattr.hbm.xml"/>
+    <mapping resource="com/pojos/Shippingaddress.hbm.xml"/>
+    <mapping resource="com/pojos/Productprices.hbm.xml"/>
+    <mapping resource="com/pojos/Customercontact.hbm.xml"/>
+    <mapping resource="com/pojos/Customercredentials.hbm.xml"/>
+    <mapping resource="com/pojos/StoreCategories.hbm.xml"/>
+    <mapping resource="com/pojos/Admincredentials.hbm.xml"/>
+    <mapping resource="com/pojos/Productdetail.hbm.xml"/>
+    <mapping resource="com/pojos/Customer.hbm.xml"/>
+    <mapping resource="com/pojos/Storeorders.hbm.xml"/>
+    <mapping resource="com/pojos/Orderamounts.hbm.xml"/>
+    <mapping resource="com/pojos/Orderstatus.hbm.xml"/>
+    <mapping resource="com/pojos/Productshippingprops.hbm.xml"/>
+    <mapping resource="com/pojos/Productdim.hbm.xml"/>
+    <mapping resource="com/pojos/Orderinvoice.hbm.xml"/>
+    <mapping resource="com/pojos/Productinventory.hbm.xml"/>
+    <mapping resource="com/pojos/Useradmin.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>
