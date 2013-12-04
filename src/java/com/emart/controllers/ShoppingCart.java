@@ -105,4 +105,8 @@ public class ShoppingCart implements Serializable {
     public Set getItems(){ 
         return cart_items;
     }
+    
+    public float getSubtotal() {
+        return ch.getSubtotal(items_map, item_qty_map);
+    }
 }

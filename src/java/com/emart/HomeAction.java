@@ -5,9 +5,10 @@
  */
 package com.emart;
 
+import Facebook.SimpleTest;
 import com.emart.controllers.UserManager;
-import com.opensymphony.xwork2.ActionSupport;
-import static com.opensymphony.xwork2.Action.SUCCESS;
+import com.opensymphony.xwork2.*;
+import static com.opensymphony.xwork2.ActionSupport.*;
 import com.pojos.ItemUtility;
 import com.pojos.OrderUtil;
 import java.util.ArrayList;
@@ -23,7 +24,15 @@ public class HomeAction extends ActionSupport {
     private List popularItems;
     private String productName;
     private List products;
+    private String facebookReco;
 
+    public String getFacebookReco() {
+        return facebookReco;
+    }
+
+    public void setFacebookReco(String facebookReco) {
+        this.facebookReco = facebookReco;
+    }
     public List getProducts() {
         return products;
     }
@@ -68,7 +77,8 @@ public class HomeAction extends ActionSupport {
 
         ProductAttr pa = new ProductAttr();
         products = new ArrayList();
-
+        SimpleTest fb = new SimpleTest();
+        facebookReco = fb.main(null);
         for (Object i : popularItems) {
             pa.setProductName(iu.getProductName((Integer) i));
             pa.setProductId((Integer) i);

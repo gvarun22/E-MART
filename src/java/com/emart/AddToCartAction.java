@@ -7,7 +7,7 @@ package com.emart;
 
 import com.emart.controllers.CurrentItem;
 import com.emart.controllers.ShoppingCart;
-import com.opensymphony.xwork2.ActionSupport;
+import com.opensymphony.xwork2.*;
 import javax.inject.Inject;
 
 /**
@@ -20,13 +20,22 @@ public class AddToCartAction extends ActionSupport {
     private ShoppingCart sc;
     @Inject
     private CurrentItem ci;
+    private int quantity;
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
 
     public AddToCartAction() {
     }
 
     public String execute() throws Exception {
 
-            sc.addItem(ci.getProd(), 1);
+            sc.addItem(ci.getProd(), quantity);
             return SUCCESS;
     }
 

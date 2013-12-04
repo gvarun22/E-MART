@@ -8,6 +8,8 @@ package com.emart.controllers;
 
 import com.pojos.Product;
 import com.pojos.Productprices;
+import java.util.Iterator;
+import java.util.Map;
 
 
 /**
@@ -26,5 +28,21 @@ public class CartHelper {
        float price = ((Productprices)p.getProductpriceses().iterator().next()).getProducPrice();
        
        return price;
+    }
+    
+    public float getSubtotal(Map<Integer, Product> items_map, Map<Integer, Integer> qty_map) {
+        float subtotal = 0;
+        
+        Iterator it = items_map.entrySet().iterator();
+        while(it.hasNext()) {
+            Map.Entry pair = (Map.Entry)it.next();
+            int prod_id = (Integer)pair.getKey();
+            Product p = (Product)pair.getValue();
+            int qty = qty_map.get(prod_id);
+            subtotal = subtotal + (getProductPrice(p) * qty);
+            
+        }
+        
+        return subtotal;
     }
 }
