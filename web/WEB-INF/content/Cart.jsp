@@ -16,7 +16,7 @@
         <title>Shopping Cart</title>
     </head>
     <body>
-<<<<<<< HEAD
+
           <header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
                 <div class="navbar-header">
                     <ul class="nav navbar-nav navbar-right">
@@ -48,7 +48,7 @@
                             <div class="col1 coldiv">
                                 ${items_map.get(item).productName}
                             </div>
-=======
+
 
 
         <div class="content-wrapper">
@@ -70,7 +70,7 @@
                                 ${items_map.get(item).productName}
                             </div>
 
->>>>>>> e4fa3548cc977f507e4c23c8c4186df7555d880b
+
 
                             <form action="UpdateCart">
                                 <div class="col2 coldiv">
@@ -80,7 +80,7 @@
                                 <div class="col3 coldiv">
                                     $ ${shoppingCart.ch.getProductPrice(items_map.get(item))}
 
-<<<<<<< HEAD
+
                             <form action="UpdateCart">
                                 <div class="col2 coldiv">
                                     <input class="form-control-2 qty" type="text" maxlength="3" size="3" name="qty" value="${item_qty_map.get(item)}" />
@@ -95,7 +95,7 @@
                                     <input class="btn btn-default" type="submit" value="Update Quantity"/>
                                 </div>
                             </form>
-=======
+
                                 </div>
 
                                 <div class="col3 coldiv">
@@ -103,11 +103,11 @@
                                 </div>
                             </form>
 
->>>>>>> e4fa3548cc977f507e4c23c8c4186df7555d880b
+
 
                         </div>
 
-<<<<<<< HEAD
+
                         </div>
 
                     </s:iterator>
@@ -118,7 +118,7 @@
                     Subtotal: $ ${shoppingCart.subtotal}
                 </div>
             </div>
-=======
+
                     </s:iterator>
                 </div>
             </div>
@@ -127,7 +127,7 @@
                     Subtotal: $ ${shoppingCart.subtotal}
                 </div>
             </div>
->>>>>>> e4fa3548cc977f507e4c23c8c4186df7555d880b
+
             <div class="checkout">
 
                 <s:url action="purchase" var="urlTag" >

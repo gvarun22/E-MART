@@ -3,33 +3,22 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group name="ALL">
-            <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/web/WEB-INF/content/CategorySearchResults.jsp</file>
-            <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/web/WEB-INF/web.xml</file>
+            <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/src/java/com/emart/filters/LoggedInInterceptor.java</file>
+            <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/nbproject/project.properties</file>
             <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/web/login.jsp</file>
-        </group>
-        <group>
-            <file>file:/C:/Users/Kunal/Documents/NetBeansProjects/E-MART/web/WEB-INF/content/CategorySearch.jsp</file>
-            <file>file:/C:/Users/Kunal/Documents/NetBeansProjects/E-MART/src/java/Facebook/SimpleTest.java</file>
-            <file>file:/C:/Users/Kunal/Documents/NetBeansProjects/E-MART/src/java/com/emart/HomeAction.java</file>
-            <file>file:/C:/Users/Kunal/Documents/NetBeansProjects/E-MART/web/welcomeStruts.jsp</file>
-            <file>file:/C:/Users/Kunal/Documents/NetBeansProjects/E-MART/web/example/SearchResult.jsp</file>
-            <file>file:/C:/Users/Kunal/Documents/NetBeansProjects/E-MART/web/index.jsp</file>
-        </group>
-        <group>
-            <file>file:/C:/Users/Kunal/Documents/NetBeansProjects/E-MART/web/WEB-INF/content/CategorySearch.jsp</file>
-            <file>file:/C:/Users/Kunal/Documents/NetBeansProjects/E-MART/src/java/Facebook/SimpleTest.java</file>
-            <file>file:/C:/Users/Kunal/Documents/NetBeansProjects/E-MART/src/java/com/emart/HomeAction.java</file>
-            <file>file:/C:/Users/Kunal/Documents/NetBeansProjects/E-MART/web/welcomeStruts.jsp</file>
-            <file>file:/C:/Users/Kunal/Documents/NetBeansProjects/E-MART/web/example/SearchResult.jsp</file>
-            <file>file:/C:/Users/Kunal/Documents/NetBeansProjects/E-MART/web/index.jsp</file>
-        </group>
-        <group>
-            <file>file:/C:/Users/Kunal/Documents/NetBeansProjects/E-MART/web/WEB-INF/content/CategorySearch.jsp</file>
-            <file>file:/C:/Users/Kunal/Documents/NetBeansProjects/E-MART/src/java/Facebook/SimpleTest.java</file>
-            <file>file:/C:/Users/Kunal/Documents/NetBeansProjects/E-MART/src/java/com/emart/HomeAction.java</file>
-            <file>file:/C:/Users/Kunal/Documents/NetBeansProjects/E-MART/web/welcomeStruts.jsp</file>
-            <file>file:/C:/Users/Kunal/Documents/NetBeansProjects/E-MART/web/example/SearchResult.jsp</file>
-            <file>file:/C:/Users/Kunal/Documents/NetBeansProjects/E-MART/web/index.jsp</file>
+            <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/nbproject/build-impl.xml</file>
+            <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/src/java/com/pojos/CustomerCredentialsUtility.java</file>
+            <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/src/java/com/emart/HomeAction.java</file>
+            <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/web/WEB-INF/web.xml</file>
+            <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/web/css/bootstrap-theme.min.css</file>
+            <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/web/WEB-INF/content/CategorySearchResults.jsp</file>
+            <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/web/WEB-INF/content/CategorySearch.jsp</file>
+            <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/web/css/bootstrap.css.orig</file>
+            <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/web/css/bootstrap.css</file>
+            <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/web/css/bootstrap-theme.css</file>
+            <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/web/WEB-INF/content/Failure.jsp</file>
+            <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/web/WEB-INF/content/Item.jsp</file>
+            <file>file:/C:/Users/Varun/Documents/NetBeansProjects/E-MART/web/WEB-INF/content/Cart.jsp</file>
         </group>
     </open-files>
 </project-private>
