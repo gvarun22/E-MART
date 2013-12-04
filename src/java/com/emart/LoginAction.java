@@ -3,7 +3,7 @@ package com.emart;
 
 import com.emart.controllers.UserManager;
 import static com.opensymphony.xwork2.Action.*;
-import com.opensymphony.xwork2.ActionSupport;
+import com.opensymphony.xwork2.*;
 import com.pojos.Customer;
 import com.pojos.CustomerCredentialsUtility;
 import com.pojos.CustomerUtility;
