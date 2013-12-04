@@ -64,3 +64,18 @@ and open the template in the editor.
 .totals .panel-body {
     padding: 5px;
 }
+
+.add-to-cart .qty {
+    width: 50px;
+    margin: auto;
+}
+
+.add-tocart-btn {
+    width: 100px;
+}
+
+.add-to-cart .row { 
+    
+    margin-top: 10px;
+    
+}
