@@ -36,6 +36,7 @@ and open the template in the editor.
     text-align: center;
 }
 
+<<<<<<< HEAD
 .coldiv input.qty {
     margin: auto;
     width: 25%;
@@ -78,4 +79,8 @@ and open the template in the editor.
     
     margin-top: 10px;
     
+=======
+.row-div, .checkout {
+    clear: both;
+>>>>>>> e4fa3548cc977f507e4c23c8c4186df7555d880b
 }

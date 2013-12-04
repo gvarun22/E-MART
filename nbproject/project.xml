@@ -37,6 +37,7 @@
                     <path-in-war>WEB-INF/lib</path-in-war>
                 </library>
                 <library dirs="200">
+<<<<<<< HEAD
                 </library>
                 <library dirs="200">
                     <path-in-war>WEB-INF/lib</path-in-war>
@@ -46,6 +47,13 @@
                 </library>
                 <library dirs="200">
                     <file>${libs.Commons-Logging.classpath}</file>
+=======
+                    <file>${file.reference.struts2-cdi-plugin-2.3.1.1.jar}</file>
+                    <path-in-war>WEB-INF/lib</path-in-war>
+                </library>
+                <library dirs="200">
+                    <file>${file.reference.restfb-1.6.12.jar}</file>
+>>>>>>> e4fa3548cc977f507e4c23c8c4186df7555d880b
                     <path-in-war>WEB-INF/lib</path-in-war>
                 </library>
             </web-module-libraries>

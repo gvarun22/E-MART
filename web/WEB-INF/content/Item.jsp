@@ -23,9 +23,12 @@
     <header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
         <div class="navbar-header">
             <ul class="nav navbar-nav navbar-right">
+<<<<<<< HEAD
                         <li>
                             <a href="/E-MART/Home" class="navbar-brand"> Home</a>
                         </li>
+=======
+>>>>>>> e4fa3548cc977f507e4c23c8c4186df7555d880b
                 <li>
                     <a href="/E-MART/Logout" class="navbar-brand"> Logout</a>
                 </li>
@@ -62,8 +65,12 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12"><input type="submit" value="Add" class="btn btn-success add-tocart-btn"/></div>
+<<<<<<< HEAD
                                         <s:submit  value="addToCart"/>
                                     <div class="col-md-12"><input type="submit" value="Add" class="btn btn-success add-tocart-btn"/></div>
+=======
+                                    
+>>>>>>> e4fa3548cc977f507e4c23c8c4186df7555d880b
                                 </div>
                             </div>
                         </form>
@@ -79,6 +86,10 @@
         </table>
     </table>
 </div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> e4fa3548cc977f507e4c23c8c4186df7555d880b
 <div></div>
 <!--</form>-->
 </body>
