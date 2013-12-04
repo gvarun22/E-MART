@@ -9,9 +9,12 @@ and open the template in the editor.
 */
 
 .cart-items { 
-
+    padding-right: 50px;
 }
-
+.table-wrapper {
+    background: black;
+    width: 850px;
+}
 .cart-items td, .cart-items th {
     width: 200px;
     text-align: center;
@@ -33,6 +36,31 @@ and open the template in the editor.
     text-align: center;
 }
 
+.coldiv input.qty {
+    margin: auto;
+    width: 25%;
+}
+
 .row-div, .checkout {
     clear: both;
+}
+
+.items-wrapper {
+    
+   width: 850px;
+   margin-bottom: 0px !important;
+}
+
+.content-wrapper {
+    width: 850px;
+    margin: auto;
+}
+
+.totals {
+    width: 150px;
+    float: right;
+}
+
+.totals .panel-body {
+    padding: 5px;
 }
