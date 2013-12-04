@@ -12,9 +12,25 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="css/global.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
         <title>Shopping Cart</title>
     </head>
     <body>
+          <header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
+                <div class="navbar-header">
+                    <ul class="nav navbar-nav navbar-right">
+                         <li>
+                            <a href="/E-MART/Home" class="navbar-brand"> Home</a>
+                        </li>
+                        <li>
+                            <a href="/E-MART/Logout" class="navbar-brand"> Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </header>
+        <br/>
+        <br/>
+        <br/>
         <h1>Shopping Cart:</h1>
 
 

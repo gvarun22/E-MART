@@ -22,6 +22,9 @@
         <header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
                 <div class="navbar-header">
                     <ul class="nav navbar-nav navbar-right">
+                         <li>
+                            <a href="/E-MART/Home" class="navbar-brand"> Home</a>
+                        </li>
                         <li>
                             <a href="/E-MART/Logout" class="navbar-brand"> Logout</a>
                         </li>
@@ -46,16 +49,14 @@
                         <table>
                             <tr>
                                 <td><label id="costLable">Cost</label></td>      
-                                <td>$ ${cost}<input type=hidden name="priceLabel" value="${cost}"/> </td>            
+                                <td>$ ${cost}<input type=hidden  name="priceLabel" value="${cost}"/> </td>            
                             </tr>
                             <tr>
                                 <td><label id="quantityLable">Quantity </label></td>
-                                <td><input type="text" name="quantity"/></td>
-                                <td>
-                                    
+                                <td><input type="text" name="quantity" style="width:30%"/></td>
+                                <td>                                   
                                     <s:form method="POST" action="AddToCart">
-                                        
-                                        <s:submit  value="addToCart"/>
+                                    <s:submit  value="addToCart"/>
                                     </s:form>
                                 </td>
                             </tr>
@@ -71,7 +72,6 @@
             </table>
         </table>
     </div>
-    <h2> <input type="submit" value="Purchase"/></h2>
     <div></div>
     <!--</form>-->
 </body>
