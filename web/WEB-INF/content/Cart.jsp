@@ -23,7 +23,6 @@
                             <a href="/E-MART/Home" class="navbar-brand"> Home</a>
                         </li>
                         <li>
-                            <a href="/E-MART/Logout" class="navbar-brand"> Logout</a>
                         </li>
                     </ul>
                 </div>
@@ -31,7 +30,8 @@
         <br/>
         <br/>
         <br/>
-        <h1>Shopping Cart:</h1>
+            <h1>Shopping Cart:</h1>
+            <div class="table-wrapper">
 
 
                 <table cellspacing="0" class="cart-items">
