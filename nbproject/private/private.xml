@@ -23,9 +23,11 @@
         </group>
         <group>
             <file>file:/C:/Users/Rahul/Desktop/EMART_CLONE/E-MART/src/java/struts.xml</file>
-            <file>file:/C:/Users/Rahul/Desktop/EMART_CLONE/E-MART/src/java/Facebook/SimpleTest.java</file>
-            <file>file:/C:/Users/Rahul/Desktop/EMART_CLONE/E-MART/nbproject/build-impl.xml~</file>
-            <file>file:/C:/Users/Rahul/Desktop/EMART_CLONE/E-MART/src/java/com/emart/LoginAction.java</file>
+            <file>file:/C:/Users/Rahul/Desktop/EMART_CLONE/E-MART/src/java/com/pojos/CustomerUtility.java</file>
+            <file>file:/C:/Users/Rahul/Desktop/EMART_CLONE/E-MART/src/java/com/emart/HomeAction.java</file>
+            <file>file:/C:/Users/Rahul/Desktop/EMART_CLONE/E-MART/src/java/com/pojos/ItemUtility.java</file>
+            <file>file:/C:/Users/Rahul/Desktop/EMART_CLONE/E-MART/src/java/com/emart/RegisterAction.java</file>
+            <file>file:/C:/Users/Rahul/Desktop/EMART_CLONE/E-MART/src/java/com/pojos/RegisterUitility.java</file>
         </group>
     </open-files>
 </project-private>

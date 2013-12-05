@@ -44,7 +44,15 @@ public class RegisterUitility {
    // customer.setBillingaddresses(address);
     customer.setGender(gender);
     s.persist(customer);
-    PersistCustomerCreds(customer,userName,password);
+ //   PersistCustomerCreds(customer,userName,password);
+      Customercredentials ccreds= new Customercredentials();
+          ccreds.setAccountActive(1);
+          ccreds.setCustomer(customer);
+          ccreds.setCustomerLogin(userName);
+          ccreds.setCustomerPassword(password);
+          
+          s.persist(ccreds);
+    
     s.getTransaction().commit();
     
     }
@@ -56,7 +64,7 @@ public class RegisterUitility {
 
           Customercredentials ccreds= new Customercredentials();
           ccreds.setAccountActive(1);
-        //  ccreds.setCustomer(customer);
+          ccreds.setCustomer(customer);
           ccreds.setCustomerLogin(userName);
           ccreds.setCustomerPassword(password);
           
