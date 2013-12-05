@@ -24,9 +24,9 @@
         <div class="navbar-header">
             <ul class="nav navbar-nav navbar-right">
 
-                        <li>
-                            <a href="/E-MART/Home" class="navbar-brand"> Home</a>
-                        </li>
+                <li>
+                    <a href="/E-MART/Home" class="navbar-brand"> Home</a>
+                </li>
 
                 <li>
                     <a href="/E-MART/Logout" class="navbar-brand"> Logout</a>
@@ -49,7 +49,7 @@
             <tr>
                 <td style="font-size: 70px; width:450px ;height:300px; text-align: center">${productName}</td>
                 <td style="font-size: 20px; width:450px ;height:300px; text-align: center">
-                   
+
                     <div class="panel panel-default add-to-cart">
                         <div class="panel-heading">Add to cart</div>
                         <form action="AddToCart" method="POST">
@@ -65,7 +65,7 @@
                                 <div class="row">
                                     <div class="col-md-12"><input type="submit" value="Add" class="btn btn-success add-tocart-btn"/></div>
 
-                                        <s:submit  value="addToCart"/>
+                                    <s:submit  value="addToCart"/>
                                     <div class="col-md-12"><input type="submit" value="Add" class="btn btn-success add-tocart-btn"/></div>
 
                                 </div>
