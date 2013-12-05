@@ -60,7 +60,7 @@ public class LoginAction extends ActionSupport {
             {
                 CustomerCredentialsUtility cc = new CustomerCredentialsUtility();
                 Customer cust = cc.getCustomerByCredentials(username);
-                System.out.println(cust.getFirstName());
+              //  System.out.println(cust.getFirstName());
                 um.setCust(cust);
                 um.setLogged_in(true);
                 
