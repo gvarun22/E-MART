@@ -37,8 +37,8 @@
     <br/>
     <br/>
     <br/>
-    <div style="width: 400px;float:left;">
-        <table>
+    <div style="width: 400px;float:left">
+        <table class="table">
             <tr>
                 <td> <img src="${image}" alt="image" width="300" height="400"/></td>
             </tr>
