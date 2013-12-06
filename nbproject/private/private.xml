@@ -23,12 +23,11 @@
         </group>
         <group>
             <file>file:/C:/Users/Rahul/Desktop/EMART_CLONE/E-MART/web/login.jsp</file>
+            <file>file:/C:/Users/Rahul/Desktop/EMART_CLONE/E-MART/web/WEB-INF/content/Cart.jsp</file>
             <file>file:/C:/Users/Rahul/Desktop/EMART_CLONE/E-MART/web/WEB-INF/content/verifyCard.jsp</file>
-            <file>file:/C:/Users/Rahul/Desktop/EMART_CLONE/E-MART/src/java/com/pojos/Product.java</file>
-            <file>file:/C:/Users/Rahul/Desktop/EMART_CLONE/E-MART/src/java/com/emart/controllers/CartHelper.java</file>
             <file>file:/C:/Users/Rahul/Desktop/EMART_CLONE/E-MART/src/java/com/emart/PurchaseActionClass.java</file>
-            <file>file:/C:/Users/Rahul/Desktop/EMART_CLONE/E-MART/web/WEB-INF/content/CategorySearchResults.jsp</file>
             <file>file:/C:/Users/Rahul/Desktop/EMART_CLONE/E-MART/web/WEB-INF/content/CategorySearch.jsp</file>
+            <file>file:/C:/Users/Rahul/Desktop/EMART_CLONE/E-MART/web/WEB-INF/content/Item.jsp</file>
             <file>file:/C:/Users/Rahul/Desktop/EMART_CLONE/E-MART/src/java/com/emart/controllers/ShoppingCart.java</file>
         </group>
     </open-files>

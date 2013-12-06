@@ -64,10 +64,6 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12"><input type="submit" value="Add" class="btn btn-success add-tocart-btn"/></div>
-
-                                    <s:submit  value="addToCart"/>
-                                    <div class="col-md-12"><input type="submit" value="Add" class="btn btn-success add-tocart-btn"/></div>
-
                                 </div>
                             </div>
                         </form>

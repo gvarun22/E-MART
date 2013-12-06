@@ -18,7 +18,7 @@ public class PurchaseActionClass extends ActionSupport {
     float priceLabel;
     double totalAmount;
     int productId;
-    Long price;
+    double price;
 @Inject
     private ShoppingCart sc;
     public int getProductId() {
@@ -68,17 +68,8 @@ public class PurchaseActionClass extends ActionSupport {
         
         if(items != null && items.size()>0){
             totalAmount=sc.getSubtotal();
-             price=Math.round(totalAmount);
-//            float sum=0;
-//            for(Object key:item_price.keySet()){
-//            
-//                sc.getCh().getProductPrice((Product)key);
-//                int qty=items.get(key);
-//                Product prod=(Product)item_price.get(key);
-//                Set price=prod.getProductpriceses();
-//                
-//            
-//            }
+             totalAmount=Math.round(100.0*totalAmount)/100.0;
+
             
             return "success";
         }
