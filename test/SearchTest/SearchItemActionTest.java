@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package SearchTest;
 
 import com.emart.SearchItemAction;
 import com.pojos.Product;
