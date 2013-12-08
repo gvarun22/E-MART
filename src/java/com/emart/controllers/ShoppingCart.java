@@ -54,11 +54,12 @@ public class ShoppingCart implements Serializable {
     }
     
     @PostConstruct
-    private void initializeSet() {
+    public void initializeSet() {
         item_qty_map = new HashMap(0);
         items_map = new HashMap(0);
         ch = new CartHelper();
     }
+    
 
     public CartHelper getCh() {
         return ch;
