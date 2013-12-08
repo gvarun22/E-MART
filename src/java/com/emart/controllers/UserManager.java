@@ -56,6 +56,7 @@ public class UserManager implements Serializable {
         return false;
     }
     
+    
     public Shippingaddress getShippingAddress() {
         return (Shippingaddress)cust.getShippingaddresses().iterator().next();
         
