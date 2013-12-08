@@ -106,12 +106,24 @@
         <condition property="do.display.browser">
             <istrue value="${display.browser}"/>
         </condition>
+        <condition property="do.display.browser.debug.old">
+            <and>
+                <isset property="do.display.browser"/>
+                <not>
+                    <isset property="do.debug.client"/>
+                </not>
+                <not>
+                    <isset property="browser.context"/>
+                </not>
+            </and>
+        </condition>
         <condition property="do.display.browser.debug">
             <and>
                 <isset property="do.display.browser"/>
                 <not>
                     <isset property="do.debug.client"/>
                 </not>
+                <isset property="browser.context"/>
             </and>
         </condition>
         <available file="${conf.dir}/MANIFEST.MF" property="has.custom.manifest"/>
@@ -459,7 +471,7 @@ or ant -Dj2ee.platform.classpath=&lt;server_classpath&gt; (where no properties f
                     </fileset>
                 </union>
                 <taskdef classname="org.testng.TestNGAntTask" classpath="${run.test.classpath}" name="testng"/>
-                <testng classfilesetref="test.set" failureProperty="tests.failed" methods="${testng.methods.arg}" mode="${testng.mode}" outputdir="${build.test.results.dir}" suitename="E-MART" testname="TestNG tests" workingDir="${basedir}">
+                <testng classfilesetref="test.set" failureProperty="tests.failed" listeners="org.testng.reporters.VerboseReporter" methods="${testng.methods.arg}" mode="${testng.mode}" outputdir="${build.test.results.dir}" suitename="E-MART" testname="TestNG tests" workingDir="${basedir}">
                     <xmlfileset dir="${build.test.classes.dir}" includes="@{testincludes}"/>
                     <propertyset>
                         <propertyref prefix="test-sys-prop."/>
@@ -841,16 +853,8 @@ exists or setup the property manually. For example like this:
     <!--
                 COMPILATION SECTION
             -->
-    <target depends="init" if="no.dist.ear.dir" name="deps-module-jar" unless="no.deps">
-        <ant antfile="${project.ShippingCostInterface}/build.xml" inheritall="false" target="jar">
-            <property name="deploy.on.save" value="false"/>
-        </ant>
-    </target>
-    <target depends="init" if="dist.ear.dir" name="deps-ear-jar" unless="no.deps">
-        <ant antfile="${project.ShippingCostInterface}/build.xml" inheritall="false" target="jar">
-            <property name="deploy.on.save" value="false"/>
-        </ant>
-    </target>
+    <target depends="init" if="no.dist.ear.dir" name="deps-module-jar" unless="no.deps"/>
+    <target depends="init" if="dist.ear.dir" name="deps-ear-jar" unless="no.deps"/>
     <target depends="init, deps-module-jar, deps-ear-jar" name="deps-jar" unless="no.deps"/>
     <target depends="init,deps-jar" name="-pre-pre-compile">
         <mkdir dir="${build.classes.dir}"/>
@@ -968,28 +972,28 @@ exists or setup the property manually. For example like this:
         <dirname file="${dist.war}" property="dist.jar.dir"/>
         <mkdir dir="${dist.jar.dir}"/>
         <jar compress="${jar.compress}" jarfile="${dist.war}">
-            <fileset dir="${build.web.dir}" excludes="WEB-INF/classes/.netbeans_*"/>
+            <fileset dir="${build.web.dir}" excludes="WEB-INF/classes/.netbeans_*,${dist.archive.excludes}"/>
         </jar>
     </target>
     <target depends="init,compile,compile-jsps,-pre-dist" if="do.war.package.with.custom.manifest" name="-do-dist-with-manifest">
         <dirname file="${dist.war}" property="dist.jar.dir"/>
         <mkdir dir="${dist.jar.dir}"/>
         <jar compress="${jar.compress}" jarfile="${dist.war}" manifest="${build.meta.inf.dir}/MANIFEST.MF">
-            <fileset dir="${build.web.dir}" excludes="WEB-INF/classes/.netbeans_*"/>
+            <fileset dir="${build.web.dir}" excludes="WEB-INF/classes/.netbeans_*,${dist.archive.excludes}"/>
         </jar>
     </target>
     <target depends="init,compile,compile-jsps,-pre-dist" if="do.tmp.war.package.without.custom.manifest" name="-do-tmp-dist-without-manifest">
         <dirname file="${dist.war}" property="dist.jar.dir"/>
         <mkdir dir="${dist.jar.dir}"/>
         <jar compress="${jar.compress}" jarfile="${dist.war}">
-            <fileset dir="${build.web.dir}" excludes="WEB-INF/classes/.netbeans_*"/>
+            <fileset dir="${build.web.dir}" excludes="WEB-INF/classes/.netbeans_*,${dist.archive.excludes}"/>
         </jar>
     </target>
     <target depends="init,compile,compile-jsps,-pre-dist" if="do.tmp.war.package.with.custom.manifest" name="-do-tmp-dist-with-manifest">
         <dirname file="${dist.war}" property="dist.jar.dir"/>
         <mkdir dir="${dist.jar.dir}"/>
         <jar compress="${jar.compress}" jarfile="${dist.war}" manifest="${build.meta.inf.dir}/MANIFEST.MF">
-            <fileset dir="${build.web.dir}" excludes="WEB-INF/classes/.netbeans_*"/>
+            <fileset dir="${build.web.dir}" excludes="WEB-INF/classes/.netbeans_*,${dist.archive.excludes}"/>
         </jar>
     </target>
     <target depends="init,compile,compile-jsps,-pre-dist,-do-dist-with-manifest,-do-dist-without-manifest" name="do-dist"/>
@@ -999,6 +1003,22 @@ exists or setup the property manually. For example like this:
         <copyfiles files="${libs.primefaces.classpath}" iftldtodir="${build.web.dir}/WEB-INF" todir="${dist.ear.dir}/lib"/>
         <copyfiles files="${libs.struts2lib-2-3-4.classpath}" iftldtodir="${build.web.dir}/WEB-INF" todir="${dist.ear.dir}/lib"/>
         <copyfiles files="${file.reference.mysql-connector-java-5.1.20-bin.jar}" iftldtodir="${build.web.dir}/WEB-INF" todir="${dist.ear.dir}/lib"/>
+        <copyfiles files="${file.reference.restfb-1.6.12.jar-1}" iftldtodir="${build.web.dir}/WEB-INF" todir="${dist.ear.dir}/lib"/>
+        <copyfiles files="${libs.Jakarta.classpath}" iftldtodir="${build.web.dir}/WEB-INF" todir="${dist.ear.dir}/lib"/>
+        <copyfiles files="${libs.Display.classpath}" iftldtodir="${build.web.dir}/WEB-INF" todir="${dist.ear.dir}/lib"/>
+        <copyfiles files="${libs.Commons-Logging.classpath}" iftldtodir="${build.web.dir}/WEB-INF" todir="${dist.ear.dir}/lib"/>
+        <copyfiles files="${libs.Commons.classpath}" iftldtodir="${build.web.dir}/WEB-INF" todir="${dist.ear.dir}/lib"/>
+        <copyfiles files="${libs.Jakarta.classpath}" iftldtodir="${build.web.dir}/WEB-INF" todir="${dist.ear.dir}/lib"/>
+        <copyfiles files="${libs.Commons-Logging.classpath}" iftldtodir="${build.web.dir}/WEB-INF" todir="${dist.ear.dir}/lib"/>
+        <copyfiles files="${file.reference.commons-beanutils-1.7.0.jar}" iftldtodir="${build.web.dir}/WEB-INF" todir="${dist.ear.dir}/lib"/>
+        <copyfiles files="${file.reference.displaytag-1.2.jar}" iftldtodir="${build.web.dir}/WEB-INF" todir="${dist.ear.dir}/lib"/>
+<<<<<<< Updated upstream
+        <copyfiles files="${file.reference.struts2-cdi-plugin-2.3.4.jar}" iftldtodir="${build.web.dir}/WEB-INF" todir="${dist.ear.dir}/lib"/>
+        <copyfiles files="${file.reference.struts2-cdi-plugin-2.3.4.jar-1}" iftldtodir="${build.web.dir}/WEB-INF" todir="${dist.ear.dir}/lib"/>
+=======
+        <copyfiles files="${file.reference.displaytag-export-poi-1.2.jar}" iftldtodir="${build.web.dir}/WEB-INF" todir="${dist.ear.dir}/lib"/>
+        <copyfiles files="${file.reference.displaytag-portlet-1.2.jar}" iftldtodir="${build.web.dir}/WEB-INF" todir="${dist.ear.dir}/lib"/>
+        <copyfiles files="${file.reference.jakarta-commons-lang.jar}" iftldtodir="${build.web.dir}/WEB-INF" todir="${dist.ear.dir}/lib"/>
         <copyfiles files="${file.reference.commons-logging-1.1.3-javadoc.jar}" iftldtodir="${build.web.dir}/WEB-INF" todir="${dist.ear.dir}/lib"/>
         <copyfiles files="${file.reference.commons-logging-1.1.3-sources.jar}" iftldtodir="${build.web.dir}/WEB-INF" todir="${dist.ear.dir}/lib"/>
         <copyfiles files="${file.reference.commons-logging-1.1.3-test-sources.jar}" iftldtodir="${build.web.dir}/WEB-INF" todir="${dist.ear.dir}/lib"/>
@@ -1007,14 +1027,7 @@ exists or setup the property manually. For example like this:
         <copyfiles files="${file.reference.commons-logging-adapters-1.1.3.jar}" iftldtodir="${build.web.dir}/WEB-INF" todir="${dist.ear.dir}/lib"/>
         <copyfiles files="${file.reference.commons-logging-api-1.1.3.jar}" iftldtodir="${build.web.dir}/WEB-INF" todir="${dist.ear.dir}/lib"/>
         <copyfiles files="${file.reference.commons-logging-tests.jar}" iftldtodir="${build.web.dir}/WEB-INF" todir="${dist.ear.dir}/lib"/>
-        <copyfiles files="${file.reference.commons-beanutils-1.7.0.jar}" iftldtodir="${build.web.dir}/WEB-INF" todir="${dist.ear.dir}/lib"/>
-        <copyfiles files="${file.reference.displaytag-1.2.jar}" iftldtodir="${build.web.dir}/WEB-INF" todir="${dist.ear.dir}/lib"/>
-        <copyfiles files="${file.reference.displaytag-export-poi-1.2.jar}" iftldtodir="${build.web.dir}/WEB-INF" todir="${dist.ear.dir}/lib"/>
-        <copyfiles files="${file.reference.displaytag-portlet-1.2.jar}" iftldtodir="${build.web.dir}/WEB-INF" todir="${dist.ear.dir}/lib"/>
-        <copyfiles files="${file.reference.jakarta-commons-lang.jar}" iftldtodir="${build.web.dir}/WEB-INF" todir="${dist.ear.dir}/lib"/>
-        <copyfiles files="${file.reference.restfb-1.6.12.jar}" iftldtodir="${build.web.dir}/WEB-INF" todir="${dist.ear.dir}/lib"/>
-        <copyfiles files="${file.reference.struts2-cdi-plugin-2.3.4.jar}" iftldtodir="${build.web.dir}/WEB-INF" todir="${dist.ear.dir}/lib"/>
-        <copyfiles files="${reference.ShippingCostInterface.jar}" iftldtodir="${build.web.dir}/WEB-INF" todir="${dist.ear.dir}/lib"/>
+>>>>>>> Stashed changes
         <mkdir dir="${build.web.dir}/META-INF"/>
         <manifest file="${build.web.dir}/META-INF/MANIFEST.MF" mode="update"/>
     </target>
@@ -1024,6 +1037,28 @@ exists or setup the property manually. For example like this:
         <copyfiles files="${libs.primefaces.classpath}" todir="${build.web.dir}/WEB-INF/lib"/>
         <copyfiles files="${libs.struts2lib-2-3-4.classpath}" todir="${build.web.dir}/WEB-INF/lib"/>
         <copyfiles files="${file.reference.mysql-connector-java-5.1.20-bin.jar}" todir="${build.web.dir}/WEB-INF/lib"/>
+<<<<<<< Updated upstream
+        <copyfiles files="${file.reference.restfb-1.6.12.jar-1}" todir="${build.web.dir}/WEB-INF/lib"/>
+=======
+<!--        <copyfiles files="${file.reference.struts2-cdi-plugin-2.3.1.1.jar}" todir="${build.web.dir}/WEB-INF/lib"/>-->
+        <copyfiles files="${file.reference.restfb-1.6.12.jar-1}" todir="${build.web.dir}/WEB-INF/lib"/>
+        <copyfiles files="${file.reference.struts2-cdi-plugin-2.3.1.1.jar-1}" todir="${build.web.dir}/WEB-INF/lib"/>
+>>>>>>> Stashed changes
+<!--        <copyfiles files="${libs.Jakarta.classpath}" todir="${build.web.dir}/WEB-INF/lib"/>
+        <copyfiles files="${libs.Display.classpath}" todir="${build.web.dir}/WEB-INF/lib"/>
+        <copyfiles files="${libs.Commons-Logging.classpath}" todir="${build.web.dir}/WEB-INF/lib"/>
+        <copyfiles files="${libs.Commons.classpath}" todir="${build.web.dir}/WEB-INF/lib"/>
+        <copyfiles files="${libs.Jakarta.classpath}" todir="${build.web.dir}/WEB-INF/lib"/>
+        <copyfiles files="${libs.Commons-Logging.classpath}" todir="${build.web.dir}/WEB-INF/lib"/>-->
+        <copyfiles files="${file.reference.commons-beanutils-1.7.0.jar}" todir="${build.web.dir}/WEB-INF/lib"/>
+        <copyfiles files="${file.reference.displaytag-1.2.jar}" todir="${build.web.dir}/WEB-INF/lib"/>
+<<<<<<< Updated upstream
+<!--        <copyfiles files="${file.reference.struts2-cdi-plugin-2.3.4.jar}" todir="${build.web.dir}/WEB-INF/lib"/>-->
+        <copyfiles files="${file.reference.struts2-cdi-plugin-2.3.4.jar-1}" todir="${build.web.dir}/WEB-INF/lib"/>
+=======
+        <copyfiles files="${file.reference.displaytag-export-poi-1.2.jar}" todir="${build.web.dir}/WEB-INF/lib"/>
+        <copyfiles files="${file.reference.displaytag-portlet-1.2.jar}" todir="${build.web.dir}/WEB-INF/lib"/>
+        <copyfiles files="${file.reference.jakarta-commons-lang.jar}" todir="${build.web.dir}/WEB-INF/lib"/>
         <copyfiles files="${file.reference.commons-logging-1.1.3-javadoc.jar}" todir="${build.web.dir}/WEB-INF/lib"/>
         <copyfiles files="${file.reference.commons-logging-1.1.3-sources.jar}" todir="${build.web.dir}/WEB-INF/lib"/>
         <copyfiles files="${file.reference.commons-logging-1.1.3-test-sources.jar}" todir="${build.web.dir}/WEB-INF/lib"/>
@@ -1032,14 +1067,7 @@ exists or setup the property manually. For example like this:
         <copyfiles files="${file.reference.commons-logging-adapters-1.1.3.jar}" todir="${build.web.dir}/WEB-INF/lib"/>
         <copyfiles files="${file.reference.commons-logging-api-1.1.3.jar}" todir="${build.web.dir}/WEB-INF/lib"/>
         <copyfiles files="${file.reference.commons-logging-tests.jar}" todir="${build.web.dir}/WEB-INF/lib"/>
-        <copyfiles files="${file.reference.commons-beanutils-1.7.0.jar}" todir="${build.web.dir}/WEB-INF/lib"/>
-        <copyfiles files="${file.reference.displaytag-1.2.jar}" todir="${build.web.dir}/WEB-INF/lib"/>
-        <copyfiles files="${file.reference.displaytag-export-poi-1.2.jar}" todir="${build.web.dir}/WEB-INF/lib"/>
-        <copyfiles files="${file.reference.displaytag-portlet-1.2.jar}" todir="${build.web.dir}/WEB-INF/lib"/>
-        <copyfiles files="${file.reference.jakarta-commons-lang.jar}" todir="${build.web.dir}/WEB-INF/lib"/>
-        <copyfiles files="${file.reference.restfb-1.6.12.jar}" todir="${build.web.dir}/WEB-INF/lib"/>
-        <copyfiles files="${file.reference.struts2-cdi-plugin-2.3.4.jar}" todir="${build.web.dir}/WEB-INF/lib"/>
-        <copyfiles files="${reference.ShippingCostInterface.jar}" todir="${build.web.dir}/WEB-INF/lib"/>
+>>>>>>> Stashed changes
     </target>
     <target depends="init" if="dist.ear.dir" name="-clean-webinf-lib">
         <delete dir="${build.web.dir}/WEB-INF/lib"/>
@@ -1048,7 +1076,7 @@ exists or setup the property manually. For example like this:
         <dirname file="${dist.ear.war}" property="dist.jar.dir"/>
         <mkdir dir="${dist.jar.dir}"/>
         <jar compress="${jar.compress}" jarfile="${dist.ear.war}" manifest="${build.web.dir}/META-INF/MANIFEST.MF">
-            <fileset dir="${build.web.dir}" excludes="WEB-INF/classes/.netbeans_*"/>
+            <fileset dir="${build.web.dir}" excludes="WEB-INF/classes/.netbeans_*,${dist.archive.excludes}"/>
         </jar>
     </target>
     <target name="-post-dist">
@@ -1097,17 +1125,31 @@ exists or setup the property manually. For example like this:
     <target depends="init,-pre-dist,dist,-post-dist" name="verify">
         <nbverify file="${dist.war}"/>
     </target>
-    <target depends="run-deploy,-init-display-browser,-display-browser-nb,-display-browser-cl" name="run-display-browser"/>
+    <target depends="run-deploy,-init-display-browser,-display-browser-nb-old,-display-browser-nb,-display-browser-cl" name="run-display-browser"/>
     <target if="do.display.browser" name="-init-display-browser">
+        <condition property="do.display.browser.nb.old">
+            <and>
+                <isset property="netbeans.home"/>
+                <not>
+                    <isset property="browser.context"/>
+                </not>
+            </and>
+        </condition>
         <condition property="do.display.browser.nb">
-            <isset property="netbeans.home"/>
+            <and>
+                <isset property="netbeans.home"/>
+                <isset property="browser.context"/>
+            </and>
         </condition>
         <condition property="do.display.browser.cl">
             <isset property="deploy.ant.enabled"/>
         </condition>
     </target>
-    <target if="do.display.browser.nb" name="-display-browser-nb">
+    <target if="do.display.browser.nb.old" name="-display-browser-nb-old">
         <nbbrowse url="${client.url}"/>
+    </target>
+    <target if="do.display.browser.nb" name="-display-browser-nb">
+        <nbbrowse context="${browser.context}" url="${client.url}" urlPath="${client.urlPart}"/>
     </target>
     <target if="do.display.browser.cl" name="-get-browser" unless="browser">
         <condition property="browser" value="rundll32">
@@ -1176,6 +1218,7 @@ exists or setup the property manually. For example like this:
         <nbstartserver debugmode="true"/>
         <antcall target="connect-debugger"/>
         <nbdeploy clientUrlPart="${client.urlPart}" debugmode="true" forceRedeploy="true"/>
+        <antcall target="debug-display-browser-old"/>
         <antcall target="debug-display-browser"/>
         <antcall target="connect-client-debugger"/>
     </target>
@@ -1192,8 +1235,11 @@ exists or setup the property manually. For example like this:
             </sourcepath>
         </nbjpdaconnect>
     </target>
-    <target if="do.display.browser.debug" name="debug-display-browser">
+    <target if="do.display.browser.debug.old" name="debug-display-browser-old">
         <nbbrowse url="${client.url}"/>
+    </target>
+    <target if="do.display.browser.debug" name="debug-display-browser">
+        <nbbrowse context="${browser.context}" url="${client.url}" urlPath="${client.urlPart}"/>
     </target>
     <target if="do.debug.client" name="connect-client-debugger">
         <webproject1:nbjsdebugstart webUrl="${client.url}"/>
@@ -1289,6 +1335,7 @@ exists or setup the property manually. For example like this:
         <startprofiler/>
         <nbstartserver profilemode="true"/>
         <nbdeploy clientUrlPart="${client.urlPart}" forceRedeploy="true" profilemode="true"/>
+        <antcall target="debug-display-browser-old"/>
         <antcall target="debug-display-browser"/>
         <antcall target="-profile-start-loadgen"/>
     </target>
@@ -1433,9 +1480,7 @@ exists or setup the property manually. For example like this:
                 
                 CLEANUP SECTION
             -->
-    <target depends="init" name="deps-clean" unless="no.deps">
-        <ant antfile="${project.ShippingCostInterface}/build.xml" inheritall="false" target="clean"/>
-    </target>
+    <target depends="init" name="deps-clean" unless="no.deps"/>
     <target depends="init" name="do-clean">
         <condition property="build.dir.to.clean" value="${build.web.dir}">
             <isset property="dist.ear.dir"/>

@@ -37,6 +37,15 @@
             <result name="success">/WEB-INF/content/Success.jsp</result>
             <result name="error">/WEB-INF/content/Failure.jsp</result>
         </action>
+        
+        <action name="PlaceOrder"
+                class="com.emart.PlaceOrderAction"
+                method="execute">
+            <result name="success">/WEB-INF/content/TransactionCompleted.jsp</result>
+            <result name="error">/login.jsp</result>
+        </action>
+
+        
         <action name="callSelectItemActionClass" 
                 class="com.emart.SelectItemAction" 
                 method="execute">

@@ -8,25 +8,60 @@ package com.emart;
 import com.emart.creditvalid.CreditCardVerification;
 import com.emart.creditvalid.CreditCardVerification_Service;
 import com.pojos.ShippingUtility;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+import session.ShippingCostSessionBeanRemote;
 
 /**
  *
  * @author Varun
  */
 public class CreditCardVerifyAction {
+    ShippingCostSessionBeanRemote shippingCostSessionBean = lookupShippingCostSessionBeanRemote();
+    
 
+    
     private String cardNum;
     private String ba_Addr1;
     private String ba_Addr2;
     private String ba_city;
     private String ba_state;
     private String ba_zip;
-
     private String sh_Addr1;
     private String sh_Addr2;
     private String sh_city;
     private String sh_state;
     private String sh_zip;
+    private String sh_cost;
+    private float cartAmount;
+    private float totalAmount;
+
+    public float getTotalAmount() {
+        return totalAmount;
+    }
+
+    public void setTotalAmount(float totalAmount) {
+        this.totalAmount = totalAmount;
+    }
+
+    public float getCartAmount() {
+        return cartAmount;
+    }
+
+    public void setCartAmount(float cartAmount) {
+        this.cartAmount = cartAmount;
+    }
+
+    public String getSh_cost() {
+        return sh_cost;
+    }
+
+    public void setSh_cost(String sh_cost) {
+        this.sh_cost = sh_cost;
+    }
 
     public String getBa_Addr1() {
         return ba_Addr1;
@@ -122,14 +157,40 @@ public class CreditCardVerifyAction {
         String stat = cc.verifyCard(cardNum);
 
 //System.out.println("Stat"+stat);
+        sh_cost = shippingCostSessionBean.calculateShipping(sh_zip);
+        System.out.println("Shipping cost" + sh_cost);
+        float result = (float) (Math.round(cartAmount * 100.0) / 100.0);
+        System.out.println("Total cost of shipping and cart");
+        
+        totalAmount = result+Integer.parseInt(sh_cost);
+        
+
         if (stat.equals("True")) {
             ShippingUtility su = new ShippingUtility();
             su.PersistShipingAddr(sh_Addr1, sh_Addr2, sh_city, sh_state, sh_zip);
             su.PersistBillingAddr(ba_Addr1, ba_Addr2, ba_city, ba_state, ba_zip);
-            return "success";
+            if (sh_cost != null) {
+                
+                
+                
+                return "success";
+            } else {
+                return "error";
+            }
         } else {
             return "error";
         }
     }
+
+    private ShippingCostSessionBeanRemote lookupShippingCostSessionBeanRemote() {
+        try {
+            Context c = new InitialContext();
+            return (ShippingCostSessionBeanRemote) c.lookup("java:global/ShippingCostEstimator/ShippingCostSessionBean!session.ShippingCostSessionBeanRemote");
+        } catch (NamingException ne) {
+            Logger.getLogger(getClass().getName()).log(Level.SEVERE, "exception caught", ne);
+            throw new RuntimeException(ne);
+        }
+    }
+
 
 }

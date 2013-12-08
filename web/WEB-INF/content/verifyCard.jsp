@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 <%-- 
     Document   : verifyCard
     Created on : Oct 29, 2013, 6:07:04 PM
@@ -40,7 +41,7 @@
                     <s:label>$ ${totalAmount}</s:label></h2>
 
 
-                <br/><h3>Please Enter the  Billing  Address</h3>  
+                    <br/><h3>Please Enter the  Billing  Address</h3>  
                     <div class="form-group">
                         <input type="text" name="ba_Addr1" id="ba_Addr1" class="form-control-2  " placeholder="Address 1"/>
                     </div>
@@ -58,28 +59,26 @@
                     </div>
 
 
-
                     <br/><h3>Please Enter the  Shipping  Address</h3>  
                     <div class="form-group">
-                        <input type="text" name="sh_Addr1" id="sh_Addr1" class="form-control-2" value="${userManager.shippingAddress.addr1}"/>
+                        <input type="text" name="sh_Addr1" id="sh_Addr1" class="form-control-2" placeholder="Address 1"/>
                     </div>
                     <div class="form-group">
-                        <input type="text" name="sh_Addr2" id="sh_Addr2" class="form-control-2" value="${userManager.shippingAddress.addr2}"/>
+                        <input type="text" name="sh_Addr2" id="sh_Addr2" class="form-control-2" placeholder="Address 2"/>
                     </div>
                     <div class="form-group">
-                        <input type="text" name="sh_city" id="sh_city" class="form-control-2" value="${userManager.shippingAddress.city}"/>
+                        <input type="text" name="sh_city" id="sh_city" class="form-control-2" placeholder="City"/>
                     </div>
                     <div class="form-group">
-                        <input type="text" name="sh_state" id="sh_state" class="form-control-2" value="${userManager.shippingAddress.state}"/>
+                        <input type="text" name="sh_state" id="sh_state" class="form-control-2" placeholder="State"/>
                     </div>
                     <div class="form-group">
-                        <input type="text" name="sh_zip" id="sh_zip" class="form-control-2" value="${userManager.shippingAddress.zip}"/>
+                        <input type="text" name="sh_zip" id="sh_zip" class="form-control-2" placeholder="Zip"/>
                     </div>
-
 
                     <br/><h3>Please Enter Credit Card Information</h3>
 
-                       <div class="form-group">
+                    <div class="form-group">
                         <select name="CardType" class="form-control-2" >
                             <option value="none">Type</option>
                             <option value="Visa">Visa</option>
@@ -88,7 +87,7 @@
                             <option  value="American Express">American Express</option>
                         </select>
                     </div>
-                    
+
                     <div class="form-group">
                         <input type="text" required="true" name="cardNum" id="cardNum" required="true" class="form-control-2" placeholder="CardNumber"/>
                     </div>
@@ -97,10 +96,12 @@
                         <input type="text" required="true" name="cvcNum" id="cvcNum" required="true" class="form-control-2" placeholder="CVCNumber"/>
                     </div>
 
-                 
-                    <button type="submit"  name="Validate" id="Validate" class="col-md-offset-2 btn-warning" placeholder="Validate">
-                        Confirm
-                    </button>     
+                    <input type="hidden" id="cartCost" name="cartAmount" value=${totalAmount}> 
+
+                <button type="submit"  name="Validate" id="Validate" class="col-md-offset-2 btn-warning" placeholder="Validate">
+                    Confirm
+                </button>  
+
 
 
             </s:form>

@@ -60,10 +60,6 @@ public class Orderamounts  implements java.io.Serializable {
     public void setOrderShipping(Float orderShipping) {
         this.orderShipping = orderShipping;
     }
-
-
-
-
 }
 
 
