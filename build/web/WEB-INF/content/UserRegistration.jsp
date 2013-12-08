@@ -16,24 +16,24 @@
     </head>
     <body>
         <div class="container">
-            <h1 style=" color: red">Please enter the Details </h1>
+            <h1>Please enter the Details </h1>
             (Fields marked with * are mandatory)
             <s:actionerror/>
             <form  method="post" class="form-horizontal" action="RegisterAction" >
                 <div class="form-group">
-                    <label for="un" class="col-sm-2 control-label">User Name(*)</label>
+                    <label for="un" class="col-sm-2 control-label">User Name * </label>
                     <input name="username" required="true" label="User Name(*)" class="form-control-2" />
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-2 control-label">Password(*)</label>
+                    <label class="col-sm-2 control-label">Password * </label>
                     <input type="password" required="true"  name="password" label="Password(*)" class="form-control-2"/>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-2 control-label">FirstName(*)</label>
+                    <label class="col-sm-2 control-label">FirstName * </label>
                     <input name="FirstName" required="true" label="FirstName(*)" class="form-control-2"/>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-2 control-label">LastName(*)</label>
+                    <label class="col-sm-2 control-label">LastName * </label>
                     <input name="LastName" required="true" label="LastName(*)" class="form-control-2" />
                 </div>
                 <div class="form-group">
@@ -45,7 +45,7 @@
                     <input name="Gender"  label="Gender" class="form-control-2"/>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-2 control-label">Day Phone(*)</label>
+                    <label class="col-sm-2 control-label">Day Phone * </label>
                     <input name="dayPhone"  required="true" label="Day Phone" class="form-control-2"/>
                 </div>
                 <div class="form-group">
@@ -53,10 +53,10 @@
                     <input name="eveningPhone"  label="Evening Phone"  class="form-control-2"/>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-2 control-label">Email Id(*)</label>
+                    <label class="col-sm-2 control-label">Email Id * </label>
                     <input required="true" name="email"  label="Email Id" class="form-control-2" />
                 </div>
-                <button class="btn btn-default" value="Register">Register</button>
+                <button type="submit" class="col-sm-offset-4  btn-success" value="Register">Register</button>
             </form>
         </div>
     </body>

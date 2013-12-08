@@ -98,7 +98,7 @@
                     </div>
 
                  
-                    <button type="submit"  name="Validate" id="Validate" class="btn-warning" placeholder="Validate">
+                    <button type="submit"  name="Validate" id="Validate" class="col-md-offset-2 btn-warning" placeholder="Validate">
                         Confirm
                     </button>     
 
