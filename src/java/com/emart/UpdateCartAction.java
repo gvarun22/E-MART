@@ -11,7 +11,9 @@ import com.opensymphony.xwork2.ActionSupport;
 import javax.inject.Inject;
 
 /**
- *
+ * UpdateCartAction is responsible for updating items in the ShoppingCart bean.
+ * ShoppingCart CDI bean is injected into the class. 
+ * 
  * @author punker
  */
 public class UpdateCartAction extends ActionSupport {
@@ -22,12 +24,21 @@ public class UpdateCartAction extends ActionSupport {
     @Inject
     private ShoppingCart sc;
     
+    /**
+     *
+     */
     public UpdateCartAction() {
     }
     
+    /**
+     * execute method of this class takes 2 input parameters that are fed into 
+     * the class by Struts 2 framework based on the http request parameters. 
+     * updateItem method is called on ShoppingCart bean to update quantity of 
+     * items that hold the desired product id with new quantity qty.
+     * @return
+     * @throws Exception
+     */
     public String execute() throws Exception {
-        System.out.println("Qty: " + qty);
-        System.out.println("Prod id:" + prod_id);
         
         if(sc.updateItem(prod_id, qty)) {        
         return SUCCESS;
@@ -37,18 +48,34 @@ public class UpdateCartAction extends ActionSupport {
         
     }
 
+    /**
+     *
+     * @return
+     */
     public int getProd_id() {
         return prod_id;
     }
 
+    /**
+     *
+     * @param prod_id
+     */
     public void setProd_id(int prod_id) {
         this.prod_id = prod_id;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getQty() {
         return qty;
     }
 
+    /**
+     *
+     * @param qty
+     */
     public void setQty(int qty) {
         this.qty = qty;
     }

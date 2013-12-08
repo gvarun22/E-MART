@@ -12,14 +12,22 @@ import static com.opensymphony.xwork2.Action.SUCCESS;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
- *
+ * LogoutAction is responsible for terminating session. 
  * @author punker
  */
 public class LogoutAction extends ActionSupport {
 
+    /**
+     *
+     */
     public LogoutAction() {
     }
 
+    /**
+     * execute method simply invalidates current session with the user.
+     * @return
+     * @throws Exception
+     */
     public String execute() throws Exception {
         try {
             SessionMap session = (SessionMap) ActionContext.getContext().getSession();

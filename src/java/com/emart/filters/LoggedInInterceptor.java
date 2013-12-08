@@ -12,8 +12,10 @@ import com.opensymphony.xwork2.interceptor.Interceptor;
 import javax.inject.Inject;
 
 /**
- *
- * @author punker
+ * This interceptor is checking if the user is logged in.
+ * It is used only on the login action. If the user is logged in, he should 
+ * not be able to login again.  Interceptor will redirect him to Home action.
+ * @author Maciej Warchalowski
  */
 public class LoggedInInterceptor implements Interceptor {
     
@@ -31,6 +33,7 @@ public class LoggedInInterceptor implements Interceptor {
         //throw new UnsupportedOperationException("Not supported yet.");
     }
     
+    // If the user is logged in, dont let him login again. Redirect home. 
     public String intercept(ActionInvocation actionInvocation) throws Exception {
         
         if(um != null && um.isLogged_in())

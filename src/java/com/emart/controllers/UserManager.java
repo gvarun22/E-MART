@@ -12,8 +12,14 @@ import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
 
 /**
- *
- * @author punker
+ * UserManager class is responsible for keeping keeping information about currently 
+ * logged in user.  It is a SessionScoped bean with session lifetime. This bean is injected
+ * by by LoginAction. If the user passed the correct credentials, Customer object is created by 
+ * LoginAction and passed to this bean.  This bean holds information about the customer
+ * for duration of the session.  It also has logged_in variable to quickly and simply 
+ * determine if owner of this session bean is logged in or not.  logged_in is false by 
+ * default meaning user is not logged in by default. 
+ * @author Maciej Warchalowski
  */
 @Named(value = "userManager")
 @SessionScoped
