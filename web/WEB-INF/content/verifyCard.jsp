@@ -61,19 +61,19 @@
 
                     <br/><h3>Please Enter the  Shipping  Address</h3>  
                     <div class="form-group">
-                        <input type="text" name="sh_Addr1" id="sh_Addr1" class="form-control-2" placeholder="Address 1"/>
+                        <input type="text" name="sh_Addr1" id="sh_Addr1" class="form-control-2" value="${userManager.shippingAddress.addr1}"/>
                     </div>
                     <div class="form-group">
-                        <input type="text" name="sh_Addr2" id="sh_Addr2" class="form-control-2" placeholder="Address 2"/>
+                        <input type="text" name="sh_Addr2" id="sh_Addr2" class="form-control-2" value="${userManager.shippingAddress.addr2}"/>
                     </div>
                     <div class="form-group">
-                        <input type="text" name="sh_city" id="sh_city" class="form-control-2" placeholder="City"/>
+                        <input type="text" name="sh_city" id="sh_city" class="form-control-2" value="${userManager.shippingAddress.city}"/>
                     </div>
                     <div class="form-group">
-                        <input type="text" name="sh_state" id="sh_state" class="form-control-2" placeholder="State"/>
+                        <input type="text" name="sh_state" id="sh_state" class="form-control-2" value="${userManager.shippingAddress.state}"/>
                     </div>
                     <div class="form-group">
-                        <input type="text" name="sh_zip" id="sh_zip" class="form-control-2" placeholder="Zip"/>
+                        <input type="text" name="sh_zip" id="sh_zip" class="form-control-2" value="${userManager.shippingAddress.zip}"/>
                     </div>
 
 

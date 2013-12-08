@@ -6,7 +6,9 @@
 
 package com.emart.controllers;
 
+import com.pojos.Billingaddress;
 import com.pojos.Customer;
+import com.pojos.Shippingaddress;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
@@ -18,7 +20,8 @@ import java.io.Serializable;
  * LoginAction and passed to this bean.  This bean holds information about the customer
  * for duration of the session.  It also has logged_in variable to quickly and simply 
  * determine if owner of this session bean is logged in or not.  logged_in is false by 
- * default meaning user is not logged in by default. 
+ * default meaning user is not logged in by default. We can also retrieve billing and shipping 
+ * address of the customer using the UuserManager bean. 
  * @author Maciej Warchalowski
  */
 @Named(value = "userManager")
@@ -51,6 +54,15 @@ public class UserManager implements Serializable {
     
     public boolean isLoggedIn() {
         return false;
+    }
+    
+    public Shippingaddress getShippingAddress() {
+        return (Shippingaddress)cust.getShippingaddresses().iterator().next();
+        
+    }
+    
+    public Billingaddress getBillingAddress() {
+         return (Billingaddress)cust.getBillingaddresses().iterator().next(); 
     }
     
 }
