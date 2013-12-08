@@ -22,19 +22,19 @@
             <form  method="post" class="form-horizontal" action="RegisterAction" >
                 <div class="form-group">
                     <label for="un" class="col-sm-2 control-label">User Name(*)</label>
-                    <input name="username" label="User Name(*)" class="form-control-2" />
+                    <input name="username" required="true" label="User Name(*)" class="form-control-2" />
                 </div>
                 <div class="form-group">
                     <label class="col-sm-2 control-label">Password(*)</label>
-                    <input type="password"  name="password" label="Password(*)" class="form-control-2"/>
+                    <input type="password" required="true"  name="password" label="Password(*)" class="form-control-2"/>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-2 control-label">FirstName(*)</label>
-                    <input name="FirstName" label="FirstName(*)" class="form-control-2"/>
+                    <input name="FirstName" required="true" label="FirstName(*)" class="form-control-2"/>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-2 control-label">LastName(*)</label>
-                    <input name="LastName" label="LastName(*)" class="form-control-2" />
+                    <input name="LastName" required="true" label="LastName(*)" class="form-control-2" />
                 </div>
                 <div class="form-group">
                     <label class="col-sm-2 control-label">Address</label>
@@ -45,16 +45,16 @@
                     <input name="Gender"  label="Gender" class="form-control-2"/>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-2 control-label">Day Phone</label>
-                    <input name="dayPhone"  label="Day Phone" class="form-control-2"/>
+                    <label class="col-sm-2 control-label">Day Phone(*)</label>
+                    <input name="dayPhone"  required="true" label="Day Phone" class="form-control-2"/>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-2 control-label">Evening Phone</label>
                     <input name="eveningPhone"  label="Evening Phone"  class="form-control-2"/>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-2 control-label">Email Id</label>
-                    <input name="email"  label="Email Id" class="form-control-2" />
+                    <label class="col-sm-2 control-label">Email Id(*)</label>
+                    <input required="true" name="email"  label="Email Id" class="form-control-2" />
                 </div>
                 <button class="btn btn-default" value="Register">Register</button>
             </form>

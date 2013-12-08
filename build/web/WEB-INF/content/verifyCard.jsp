@@ -82,11 +82,11 @@
                     <div><b>Please Enter Credit Card Information</b></div>
 
                         <div class="form-group">
-                            <input type="text" name="cardNum" id="cardNum" required="true" class="form-control-2" placeholder="CardNumber"/>
+                            <input type="text" required="true" name="cardNum" id="cardNum" required="true" class="form-control-2" placeholder="CardNumber"/>
                         </div>
 
                         <div class="form-group">
-                            <input type="text" name="cvcNum" id="cvcNum" required="true" class="form-control-2" placeholder="CVCNumber"/>
+                            <input type="text" required="true" name="cvcNum" id="cvcNum" required="true" class="form-control-2" placeholder="CVCNumber"/>
                         </div>
 
                         <div class="form-group">

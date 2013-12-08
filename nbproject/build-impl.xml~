@@ -1023,15 +1023,15 @@ exists or setup the property manually. For example like this:
         <copyfiles files="${libs.struts2lib-2-3-4.classpath}" todir="${build.web.dir}/WEB-INF/lib"/>
         <copyfiles files="${file.reference.mysql-connector-java-5.1.20-bin.jar}" todir="${build.web.dir}/WEB-INF/lib"/>
         <copyfiles files="${file.reference.restfb-1.6.12.jar-1}" todir="${build.web.dir}/WEB-INF/lib"/>
-        <copyfiles files="${libs.Jakarta.classpath}" todir="${build.web.dir}/WEB-INF/lib"/>
-        <copyfiles files="${libs.Display.classpath}" todir="${build.web.dir}/WEB-INF/lib"/>
-        <copyfiles files="${libs.Commons-Logging.classpath}" todir="${build.web.dir}/WEB-INF/lib"/>
-        <copyfiles files="${libs.Commons.classpath}" todir="${build.web.dir}/WEB-INF/lib"/>
-        <copyfiles files="${libs.Jakarta.classpath}" todir="${build.web.dir}/WEB-INF/lib"/>
-        <copyfiles files="${libs.Commons-Logging.classpath}" todir="${build.web.dir}/WEB-INF/lib"/>
+        <!--<copyfiles files="${libs.Jakarta.classpath}" todir="${build.web.dir}/WEB-INF/lib"/>-->
+        <!--<copyfiles files="${libs.Display.classpath}" todir="${build.web.dir}/WEB-INF/lib"/>-->
+        <!--<copyfiles files="${libs.Commons-Logging.classpath}" todir="${build.web.dir}/WEB-INF/lib"/>-->
+        <!--<copyfiles files="${libs.Commons.classpath}" todir="${build.web.dir}/WEB-INF/lib"/>-->
+        <!--<copyfiles files="${libs.Jakarta.classpath}" todir="${build.web.dir}/WEB-INF/lib"/>-->
+        <!--<copyfiles files="${libs.Commons-Logging.classpath}" todir="${build.web.dir}/WEB-INF/lib"/>-->
         <copyfiles files="${file.reference.commons-beanutils-1.7.0.jar}" todir="${build.web.dir}/WEB-INF/lib"/>
         <copyfiles files="${file.reference.displaytag-1.2.jar}" todir="${build.web.dir}/WEB-INF/lib"/>
-        <copyfiles files="${file.reference.struts2-cdi-plugin-2.3.4.jar}" todir="${build.web.dir}/WEB-INF/lib"/>
+        <!--<copyfiles files="${file.reference.struts2-cdi-plugin-2.3.4.jar}" todir="${build.web.dir}/WEB-INF/lib"/>-->
     </target>
     <target depends="init" if="dist.ear.dir" name="-clean-webinf-lib">
         <delete dir="${build.web.dir}/WEB-INF/lib"/>
