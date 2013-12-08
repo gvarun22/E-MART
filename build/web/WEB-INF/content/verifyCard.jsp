@@ -17,35 +17,32 @@
     </head>
     <body>
         <div class="container" >
-        <header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
-            <div class="navbar-header">
-                <ul class="nav navbar-nav navbar-right">
+            <header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
+                <div class="navbar-header">
+                    <ul class="nav navbar-nav navbar-right">
 
-                    <li>
-                        <a href="/E-MART/Home" class="navbar-brand"> Home</a>
-                    </li>
+                        <li>
+                            <a href="/E-MART/Home" class="navbar-brand"> Home</a>
+                        </li>
 
-                    <li>
-                        <a href="/E-MART/Logout" class="navbar-brand"> Logout</a>
-                    </li>
-                </ul>
-            </div>
-        </header>
-        <br/>
-        <br/>
-        <br/>
-        <s:form method="post" action="cardVerify" >
-            <div style=" margin-left:100px;width: 10px">
-                <table  >
-
-                    <tr><td style="width: 600; font-weight: bold; ">The total Cost of the is :</b></td>
-                        <td ><s:label>${totalAmount}</s:label></td></tr>
-                    </table>
+                        <li>
+                            <a href="/E-MART/Logout" class="navbar-brand"> Logout</a>
+                        </li>
+                    </ul>
                 </div>
-                <div style="width: 500px">
-                    <div class="form-group"><b>Please Enter the  Billing  Address</b>  </div>
+            </header>
+            <br/>
+            <br/>
+            <br/>
+            <s:form method="post" action="cardVerify" >
+
+                <h2>The total Cost of the is :
+                    <s:label>$ ${totalAmount}</s:label></h2>
+
+
+                <br/><h3>Please Enter the  Billing  Address</h3>  
                     <div class="form-group">
-                        <input type="text" name="ba_Addr1" id="ba_Addr1" class="form-control-2" placeholder="Address 1"/>
+                        <input type="text" name="ba_Addr1" id="ba_Addr1" class="form-control-2  " placeholder="Address 1"/>
                     </div>
                     <div class="form-group">
                         <input type="text" name="ba_Addr2" id="ba_Addr2" class="form-control-2" placeholder="Address 2"/>
@@ -59,9 +56,10 @@
                     <div class="form-group">
                         <input type="text" name="ba_zip" id="ba_zip" class="form-control-2" placeholder="Zip"/>
                     </div>
-                </div>
-                <div style="width: 500px">
-                    <div class="form-group"><b>Please Enter the  Shipping  Address</b>  </div>
+
+
+
+                    <br/><h3>Please Enter the  Shipping  Address</h3>  
                     <div class="form-group">
                         <input type="text" name="sh_Addr1" id="sh_Addr1" class="form-control-2" placeholder="Address 1"/>
                     </div>
@@ -77,33 +75,35 @@
                     <div class="form-group">
                         <input type="text" name="sh_zip" id="sh_zip" class="form-control-2" placeholder="Zip"/>
                     </div>
-                </div>
-                <div style="width: 500px">
-                    <div><b>Please Enter Credit Card Information</b></div>
 
-                        <div class="form-group">
-                            <input type="text" name="cardNum" id="cardNum" required="true" class="form-control-2" placeholder="CardNumber"/>
-                        </div>
 
-                        <div class="form-group">
-                            <input type="text" name="cvcNum" id="cvcNum" required="true" class="form-control-2" placeholder="CVCNumber"/>
-                        </div>
+                    <br/><h3>Please Enter Credit Card Information</h3>
 
-                        <div class="form-group">
-                            <select name="CardType" class="form-control-2" >
-                                <option value="none">Type</option>
-                                <option value="Visa">Visa</option>
-                                <option  value="MasterCard">MasterCard</option> 
-                                <option  value="Discover">Discover</option> 
-                                <option  value="American Express">American Express</option>
-                            </select>
-                        </div>
-                    <button type="sunmit"  name="Validate" id="Validate" class="form-control-2" placeholder="Validate">
+                       <div class="form-group">
+                        <select name="CardType" class="form-control-2" >
+                            <option value="none">Type</option>
+                            <option value="Visa">Visa</option>
+                            <option  value="MasterCard">MasterCard</option> 
+                            <option  value="Discover">Discover</option> 
+                            <option  value="American Express">American Express</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="text" required="true" name="cardNum" id="cardNum" required="true" class="form-control-2" placeholder="CardNumber"/>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" required="true" name="cvcNum" id="cvcNum" required="true" class="form-control-2" placeholder="CVCNumber"/>
+                    </div>
+
+                 
+                    <button type="submit"  name="Validate" id="Validate" class="col-md-offset-2 btn-warning" placeholder="Validate">
                         Confirm
                     </button>     
 
-            </div>
-        </s:form>
+
+            </s:form>
 
 
     </body>

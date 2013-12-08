@@ -15,7 +15,7 @@ import com.restfb.types.User;
 
 public class SimpleTest {
 
-	public String main(String[] args) {
+	public static String main(String[] args) {
 		
 		String me = "tom.holmes.7374"; // FB User Tom Holmes
 		String country=null;
@@ -56,8 +56,8 @@ public class SimpleTest {
 			maleGender = "1). Please visit our men's clothing section Under Apparel ";
 		}
 		
-		System.out.println("Hi '"+me2.getName()+"'. Here are few suggestions for you based on your social media activities:");
-                output = output.concat("Hi '"+me2.getName()+"'. Here are few suggestions for you based on your social media activities: <br/>");
+		System.out.println("Hi!! Here are few suggestions for you based on your social media activities:");
+                output = output.concat("Hi!! Here are few suggestions for you based on your social media activities: <br/>");
 		System.out.println("-----------------------------------------------------------------------------------------");
                 System.out.println(maleGender);
                 output = output.concat(maleGender+ "<br/>");
