@@ -72,13 +72,18 @@ public class PlaceOrderAction {
             Date date = new Date();
             Map<Integer, Product> order_map = sc.getItems_map();
             
-            float order_total = sc.getSubtotal();
+            float order_sub_total = sc.getSubtotal();
                          
             OrderUtil ou = new OrderUtil();
             int ordernum=(int) (Math.random()*100000);
+            float shipping_Cost = finalCost - order_sub_total;
             
+            System.out.println("Order.subTotal()"+order_sub_total);
+            System.out.println("Cart Amount"+cartAmount);
+            System.out.println("Shipping cost"+shipping_Cost);
+            System.out.println("Total Amount"+finalCost);
             
-            ou.PersistOrders(order_map,ordernum, date, customer, order_total, "Order Placed", date, "Ordered", "Ordered", 10, date, "Ordered",order_total,finalCost, sh_cost, cartAmount);
+            ou.PersistOrders(order_map,ordernum, date, customer, order_sub_total, "Order Placed", date, "Ordered", "Ordered", 10, date, "Ordered",order_sub_total,finalCost, shipping_Cost, order_sub_total);
             System.out.println("final cost" + finalCost);
             System.out.println("Shipping cost"+ sh_cost);
             System.out.println("cart amount"+ cartAmount);

@@ -28,11 +28,11 @@
                 <input type="password" name="password" id="password" label="Password"class="form-control-2" />
             </div>
             
-            <button type="submit" value="Login" class="btn btn-default"     >Login</button> 
+            <button type="submit" value="Login" class="btn-success">Login</button> 
         </form>
         <form action="NavigateTORegister">
             <label>New User? Register here</label><br/>
-            <button type="submit" value="Register" class="btn btn-default"  >Register</button> 
+            <button type="submit" value="Register" class="btn-success"  >Register</button> 
         </form>
         </div>
     </body>

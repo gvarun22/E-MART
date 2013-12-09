@@ -44,7 +44,7 @@ public class OrderUtil {
         return li;
     } 
         
-        public void PersistOrders(Map<Integer, Product> order_map, int order_number, Date order_date, Customer customer, float order_total, String store_orders_col, Date date_created, String order_comments, String order_ip, float order_tax_rate, Date invoice_date,String invoice_status, float invoice_amount, float finalCost, String sh_cost, float cartAmount) {
+        public void PersistOrders(Map<Integer, Product> order_map, int order_number, Date order_date, Customer customer, float order_total, String store_orders_col, Date date_created, String order_comments, String order_ip, float order_tax_rate, Date invoice_date,String invoice_status, float invoice_amount, float finalCost, float sh_cost, float cartAmount) {
 
         Storeorders so = new Storeorders();
         so.setOrderNumber(order_number);
@@ -80,7 +80,7 @@ public class OrderUtil {
         float final_cost = Float.parseFloat(finalCost);*/
         
         Orderamounts oa = new Orderamounts();
-        //oa.setOrderShipping((float)Integer.parseInt(sh_cost));
+        oa.setOrderShipping(sh_cost);
         oa.setOrderSubtotal(cartAmount);
         oa.setOrderTotal(finalCost);
         oa.setStoreorders(so);

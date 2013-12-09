@@ -20,10 +20,8 @@ import session.ShippingCostSessionBeanRemote;
  * @author Varun
  */
 public class CreditCardVerifyAction {
-    ShippingCostSessionBeanRemote shippingCostSessionBean = lookupShippingCostSessionBeanRemote();
-    
 
-    
+    ShippingCostSessionBeanRemote shippingCostSessionBean = lookupShippingCostSessionBeanRemote();
     private String cardNum;
     private String ba_Addr1;
     private String ba_Addr2;
@@ -157,29 +155,31 @@ public class CreditCardVerifyAction {
         String stat = cc.verifyCard(cardNum);
 
 //System.out.println("Stat"+stat);
-        sh_cost = shippingCostSessionBean.calculateShipping(sh_zip);
-        System.out.println("Shipping cost" + sh_cost);
-        float result = (float) (Math.round(cartAmount * 100.0) / 100.0);
-        System.out.println("Total cost of shipping and cart");
-        
-        totalAmount = result+Integer.parseInt(sh_cost);
-        
+        if (!sh_zip.equals("")) {
+            sh_cost = shippingCostSessionBean.calculateShipping(sh_zip);
+            System.out.println("Shipping cost" + sh_cost);
+            float result = (float) (Math.round(cartAmount * 100.0) / 100.0);
+            System.out.println("Total cost of shipping and cart");
 
-        if (stat.equals("True")) {
-            ShippingUtility su = new ShippingUtility();
-            su.PersistShipingAddr(sh_Addr1, sh_Addr2, sh_city, sh_state, sh_zip);
-            su.PersistBillingAddr(ba_Addr1, ba_Addr2, ba_city, ba_state, ba_zip);
-            if (sh_cost != null) {
-                
-                
-                
-                return "success";
+            totalAmount = result + Integer.parseInt(sh_cost);
+
+
+            if (stat.equals("True")) {
+                ShippingUtility su = new ShippingUtility();
+                su.PersistShipingAddr(sh_Addr1, sh_Addr2, sh_city, sh_state, sh_zip);
+                su.PersistBillingAddr(ba_Addr1, ba_Addr2, ba_city, ba_state, ba_zip);
+
+                if (sh_cost != null) {
+                    return "success";
+                } 
+                else {
+                    return "error";
+                }
             } else {
                 return "error";
             }
-        } else {
-            return "error";
         }
+        return "error";
     }
 
     private ShippingCostSessionBeanRemote lookupShippingCostSessionBeanRemote() {
@@ -191,6 +191,4 @@ public class CreditCardVerifyAction {
             throw new RuntimeException(ne);
         }
     }
-
-
 }
